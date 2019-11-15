@@ -1,0 +1,51 @@
+.heading {
+  grid-area: header;
+}
+
+.description {
+  grid-area: description;
+}
+
+.box-outline {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 0.2em solid rgb(164, 164, 164);
+  background-color: rgb(237, 237, 237) !important;
+  overflow: hidden;
+}
+
+.chartOne {
+  grid-area: chartOne;
+}
+
+.chartTwo {
+  grid-area: chartTwo;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  grid-template-areas:
+    "header header header header header"
+    "description chartOne chartOne chartTwo chartTwo"
+    "description chartOne chartOne chartTwo chartTwo"
+    "description chartOne chartOne chartTwo chartTwo"
+    "description chartOne chartOne chartTwo chartTwo"
+    "description chartOne chartOne chartTwo chartTwo";
+  /* "footer footer footer footer footer"; */
+  grid-gap: 0.4em;
+  background-color: rgb(255, 255, 255);
+  padding: 1em;
+}
+
+.grid-container > div {
+  border-radius: 0.3em;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px 0;
+  font-size: medium;
+}
