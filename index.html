@@ -18,17 +18,26 @@
       crossorigin="anonymous"
     ></script>
 
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="./styles/dom.css" />
     <link rel="stylesheet" href="./styles/loading.css" />
     <link rel="stylesheet" href="./styles/loadScreen.css" />
     <link rel="stylesheet" href="./styles/codepenLoading.css" />
+
+    <!-- Loading Page -->
 
     <script>
       window.addEventListener("load", function() {
         // var load_screen = document.getElementById("load_screen");
         var load_screen = document.getElementById("load_screen");
         document.body.removeChild(load_screen);
-      });
+        $('body').css('display', 'none');
+        $('body').fadeIn(1000);
+    });
     </script>
   </head>
   <body>
@@ -44,95 +53,97 @@
       </div>
     </div>
 
-    <!-- Navbar -->
+    <div>
+        <!-- Navbar -->
 
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-      <a class="navbar-brand" href="#">Incubator</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
+            <a class="navbar-brand" href="#">Incubator</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
             >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./tabs/data.html">Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./tabs/analysis.html">Analysis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./tabs/about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Body -->
-
-    <div class="grid-container">
-      <!-- Heading Box -->
-
-      <div class="heading">
-        <div class="jumbotron">
-        <h1>Welcome to something</h1>
-        <p>IDK what this is but its something fam</p>
-      </div>
-    </div>
-
-    <!-- First Chart -->
-
-    <div class="chartOne">
-      <span
-        style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
-        >Bar Chart</span
-      >
-      <div
-        class="flourish-embed"
-        data-src="visualisation/931612"
-        style="padding: 5em;"
-      >
-        <script src="https://public.flourish.studio/resources/embed.js"></script>
-      </div>
-    </div>
-
-    <!-- Second Chart -->
-
-    <div class="chartTwo">
-      <span
-        style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
-        >Race Chart</span
-      >
-      <div
-        class="flourish-embed"
-        data-src="visualisation/931473"
-        style="padding: 1em; margin-top: 4em;"
-      >
-        <script src="https://public.flourish.studio/resources/embed.js"></script>
-      </div>
-    </div>
-
-    <!-- Footer -->
-<footer class="page-footer font-small blue feeter">
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#"
+                    >Home <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./tabs/data.html">Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./tabs/analysis.html">Analysis</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./tabs/about.html">About</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
       
-      </footer>
-      <!-- Footer -->
+          <!-- Body -->
+      
+          <div class="grid-container">
+            <!-- Heading Box -->
+      
+            <div class="heading">
+              <div class="jumbotron">
+              <h1>Welcome to something</h1>
+              <p>IDK what this is but its something fam</p>
+            </div>
+          </div>
+      
+          <!-- First Chart -->
+      
+          <div class="chartOne">
+            <span
+              style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
+              >Bar Chart</span
+            >
+            <div
+              class="flourish-embed"
+              data-src="visualisation/931612"
+              style="padding: 5em;"
+            >
+              <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+          </div>
+      
+          <!-- Second Chart -->
+      
+          <div class="chartTwo">
+            <span
+              style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
+              >Race Chart</span
+            >
+            <div
+              class="flourish-embed"
+              data-src="visualisation/931473"
+              style="padding: 1em; margin-top: 4em;"
+            >
+              <script src="https://public.flourish.studio/resources/embed.js"></script>
+            </div>
+          </div>
+      
+          <!-- Footer -->
+      <footer class="page-footer font-small blue feeter">
+      
+              <!-- Copyright -->
+              <div class="footer-copyright text-center py-3">© 2018 Copyright:
+                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+              </div>
+              <!-- Copyright -->
+            
+            </footer>
+          <!-- Footer -->
+    </div>
   </body>
 </html>

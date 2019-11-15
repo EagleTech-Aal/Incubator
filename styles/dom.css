@@ -1,3 +1,7 @@
+div.hidden {
+  display: none;
+}
+
 .heading {
   grid-area: header;
 }
