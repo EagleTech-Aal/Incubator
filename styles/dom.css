@@ -20,8 +20,8 @@
   grid-area: chartTwo;
 }
 
-.footer {
-  grid-area: footer;
+.feeter {
+  grid-area: feeter;
 }
 
 .grid-container {
@@ -34,7 +34,8 @@
     "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
     "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
     "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
-    "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo";
+    "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
+    "feeter feeter feeter feeter feeter feeter feeter feeter feeter feeter";
   grid-gap: 0.4em;
   background-color: rgb(255, 255, 255);
   padding: 1em;
