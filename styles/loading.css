@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
+
 .lds-ripple {
   display: inline-block;
-  position: fixed;
-  top: 45%;
-  left: 45%;
+  position: relative;
   width: 64px;
   height: 64px;
+  left: 8em;
 }
 .lds-ripple div {
   position: absolute;
@@ -13,6 +14,7 @@
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 1, 1) infinite;
 }
+
 .lds-ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
@@ -31,4 +33,18 @@
     height: 58px;
     opacity: 0;
   }
+}
+
+.load-text {
+  font-size: 30px;
+  font-family: "Anton", sans-serif;
+  color: rgb(57, 120, 145);
+  position: absolute;
+  margin-top: 0.2em;
+}
+
+div#center-group {
+  position: absolute;
+  margin-top: 22%;
+  margin-left: 45%;
 }

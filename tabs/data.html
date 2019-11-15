@@ -18,6 +18,11 @@
       crossorigin="anonymous"
     ></script>
 
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="../styles/dom.css" />
     <link rel="stylesheet" href="../styles/loading.css" />
     <link rel="stylesheet" href="../styles/loadScreen.css" />
@@ -26,6 +31,8 @@
       window.addEventListener("load", function() {
         var load_screen = document.getElementById("load_screen");
         document.body.removeChild(load_screen);
+        $('body').css('display', 'none');
+        $('body').fadeIn(100);
       });
     </script>
   </head>
@@ -34,18 +41,21 @@
 
     <div id="load_screen">
       <div id="loading">
-        <div class="lds-ripple">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+          <div id="center-group">
+              <span class="load-text load_position">Loading...</span>
+              <div class="lds-ripple">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+          </div>
       </div>
     </div>
 
     <!-- Navbar -->
 
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-      <a class="navbar-brand" href="#">Incubator</a>
+      <a class="navbar-brand" href="../index.html">Incubator</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -76,5 +86,58 @@
         </ul>
       </div>
     </nav>
+
+              <!-- Body -->
+      
+              <div class="grid-container">
+                <!-- Heading Box -->
+          
+                <div class="heading">
+                  
+              </div>
+          
+              <!-- First Chart -->
+          
+              <div class="chartOne">
+                <span
+                  style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
+                  >Bar Chart</span
+                >
+                <div
+                  class="flourish-embed"
+                  data-src="visualisation/931628"
+                  style="padding: 5em;"
+                >
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+                </div>
+              </div>
+          
+              <!-- Second Chart -->
+          
+              <div class="chartTwo">
+                <span
+                  style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
+                  >Race Chart</span
+                >
+                <div
+                  class="flourish-embed"
+                  data-src="visualisation/931473"
+                  style="padding: 1em; margin-top: 4em;"
+                >
+                  <script src="https://public.flourish.studio/resources/embed.js"></script>
+                </div>
+              </div>
+
+                 <!-- Footer -->
+      <footer class="page-footer font-small blue feeter">
+      
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+          </div>
+          <!-- Copyright -->
+        
+        </footer>
+      <!-- Footer -->
   </body>
 </html>

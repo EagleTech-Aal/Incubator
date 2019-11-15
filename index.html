@@ -24,9 +24,10 @@
   crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="./styles/dom.css" />
-    <link rel="stylesheet" href="./styles/loading.css" />
-    <link rel="stylesheet" href="./styles/loadScreen.css" />
-    <link rel="stylesheet" href="./styles/codepenLoading.css" />
+    <!-- <link rel="stylesheet" href="./styles/loading.css" /> -->
+    <link rel="stylesheet" href="./styles/main-loading.css">
+    <link rel="stylesheet" href="./styles/mainLoadScreen.css" />
+    <link rel="stylesheet" href="./styles/main-header.scss">
 
     <!-- Loading Page -->
 
@@ -35,8 +36,10 @@
         // var load_screen = document.getElementById("load_screen");
         var load_screen = document.getElementById("load_screen");
         document.body.removeChild(load_screen);
+        // $('h1:after').css('','');
         $('body').css('display', 'none');
         $('body').fadeIn(1000);
+        
     });
     </script>
   </head>
@@ -45,15 +48,11 @@
 
     <div id="load_screen">
       <div id="loading">
-        <div class="lds-ripple">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <h1 id="loading_page" data-shadow='Incubator'>Incubator</h1>
       </div>
     </div>
-
     <div>
+
         <!-- Navbar -->
 
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
@@ -95,10 +94,10 @@
             <!-- Heading Box -->
       
             <div class="heading">
-              <div class="jumbotron">
-              <h1>Welcome to something</h1>
-              <p>IDK what this is but its something fam</p>
-            </div>
+                <div class="jumbotron">
+                    <h1>Welcome to something</h1>
+                    <p>IDK what this is but its something</p>
+                  </div>
           </div>
       
           <!-- First Chart -->
@@ -132,6 +131,7 @@
               <script src="https://public.flourish.studio/resources/embed.js"></script>
             </div>
           </div>
+          
       
           <!-- Footer -->
       <footer class="page-footer font-small blue feeter">
