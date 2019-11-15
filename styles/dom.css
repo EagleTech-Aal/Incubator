@@ -8,9 +8,8 @@
 
 .box-outline {
   font-family: Arial, Helvetica, sans-serif;
-  border: 0.2em solid rgb(164, 164, 164);
-  background-color: rgb(237, 237, 237) !important;
-  overflow: hidden;
+  /* border: 0.2em solid rgb(164, 164, 164); */
+  background-color: #e9ecef !important;
 }
 
 .chartOne {
@@ -30,13 +29,12 @@
   grid-template-columns: auto auto auto;
 
   grid-template-areas:
-    "header header header header header"
-    "description chartOne chartOne chartTwo chartTwo"
-    "description chartOne chartOne chartTwo chartTwo"
-    "description chartOne chartOne chartTwo chartTwo"
-    "description chartOne chartOne chartTwo chartTwo"
-    "description chartOne chartOne chartTwo chartTwo";
-  /* "footer footer footer footer footer"; */
+    "header header header header header header header header header header"
+    "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
+    "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
+    "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
+    "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo"
+    "chartOne chartOne chartOne chartOne chartOne chartTwo chartTwo chartTwo chartTwo chartTwo";
   grid-gap: 0.4em;
   background-color: rgb(255, 255, 255);
   padding: 1em;
