@@ -1,185 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Data</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Data</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/dom.css" />
+    <link rel="stylesheet" href="../styles/loading.css" />
+    <link rel="stylesheet" href="../styles/loadScreen.css" />
 
-  <link rel="stylesheet" href="../styles/dom.css" />
-  <link rel="stylesheet" href="../styles/loading.css" />
-  <link rel="stylesheet" href="../styles/loadScreen.css" />
+    <script>
+      window.addEventListener("load", function() {
+        var load_screen = document.getElementById("load_screen");
+        document.body.removeChild(load_screen);
+        $('body').css('display', 'none');
+        $('body').fadeIn(100);
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Loading Screen -->
 
-  <script>
-    window.addEventListener("load", function () {
-      var load_screen = document.getElementById("load_screen");
-      document.body.removeChild(load_screen);
-      $('body').css('display', 'none');
-      $('body').fadeIn(100);
-    });
-  </script>
-</head>
-
-<body>
-  <!-- Loading Screen -->
-
-  <div id="load_screen">
-    <div id="loading">
-      <div id="center-group">
-        <span class="load-text load_position">Loading...</span>
-        <div class="lds-ripple">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="../index.html">Incubator</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item  active">
-          <a class="nav-link" href="#">Data</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./analysis.html">Analysis</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.html">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Body -->
-
-  <div class="grid-container">
-    <!-- Heading Box -->
-
-    <div class="heading">
-
-    </div>
-
-    <!-- First Chart -->
-
-    <div class="chartOne">
-      <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Bar Chart</span>
-      <div class="flourish-embed" data-src="visualisation/931628" style="padding: 5em;">
-        <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <div id="load_screen">
+      <div id="loading">
+          <div id="center-group">
+              <span class="load-text load_position">Loading...</span>
+              <div class="lds-ripple">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+          </div>
       </div>
     </div>
 
-    <!-- Second Chart -->
+    <!-- Navbar -->
 
-    <div class="chartTwo">
-
-      <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Bar Chart</span>
-      <div style="padding: 1em;">
-        <!--Table-->
-        <table class="table table-striped w-auto">
-
-          <!--Table head-->
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Surname</th>
-              <th>Country</th>
-              <th>City</th>
-              <th>Position</th>
-              <th>Age</th>
-            </tr>
-          </thead>
-          <!--Table head-->
-
-          <!--Table body-->
-          <tbody>
-            <tr class="table-info">
-              <th scope="row">1</th>
-              <td>Kate</td>
-              <td>Moss</td>
-              <td>USA</td>
-              <td>New York City</td>
-              <td>Web Designer</td>
-              <td>23</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Anna</td>
-              <td>Wintour</td>
-              <td>United Kingdom</td>
-              <td>London</td>
-              <td>Frontend Developer</td>
-              <td>36</td>
-            </tr>
-            <tr class="table-info">
-              <th scope="row">3</th>
-              <td>Tom</td>
-              <td>Bond</td>
-              <td>Spain</td>
-              <td>Madrid</td>
-              <td>Photographer</td>
-              <td>25</td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>Jerry</td>
-              <td>Horwitz</td>
-              <td>Italy</td>
-              <td>Bari</td>
-              <td>Editor-in-chief</td>
-              <td>41</td>
-            </tr>
-            <tr class="table-info">
-              <th scope="row">5</th>
-              <td>Janis</td>
-              <td>Joplin</td>
-              <td>Poland</td>
-              <td>Warsaw</td>
-              <td>Video Maker</td>
-              <td>39</td>
-            </tr>
-          </tbody>
-          <!--Table body-->
-
-
-        </table>
-        <!--Table-->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <a class="navbar-brand" href="../index.html">Incubator</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item  active">
+            <a class="nav-link" href="#">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./analysis.html">Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
 
-    <!-- Footer -->
-    <footer class="page-footer font-small blue feeter">
+              <!-- Body -->
+      
+              <div class="grid-container">
+                <!-- Heading Box -->
+          
+                <div class="heading">
+                  
+              </div>
+          
+              <!-- First Chart -->
+          
+              <div class="chartOne">
+                <span
+                  style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
+                  >Bar Chart</span
+                >
+                <div
+                  class="flourish-embed"
+                  data-src="visualisation/931628"
+                  style="padding: 5em;"
+                >
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+                </div>
+              </div>
+          
+              <!-- Second Chart -->
+          
+              <div class="chartTwo">
+                <span
+                  style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
+                  >Race Chart</span
+                >
+                <div
+                  class="flourish-embed"
+                  data-src="visualisation/931473"
+                  style="padding: 1em; margin-top: 4em;"
+                >
+                  <script src="https://public.flourish.studio/resources/embed.js"></script>
+                </div>
+              </div>
 
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">© 2018 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-      </div>
-      <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
-</body>
-
+                 <!-- Footer -->
+      <footer class="page-footer font-small blue feeter">
+      
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+          </div>
+          <!-- Copyright -->
+        
+        </footer>
+      <!-- Footer -->
+  </body>
 </html>
