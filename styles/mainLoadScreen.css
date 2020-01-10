@@ -1,5 +1,5 @@
 div#load_screen {
-  background-color: #31354a;
+  background-color: rgb(55, 61, 67);
   opacity: 1;
   position: fixed;
   z-index: 10;
@@ -8,7 +8,7 @@ div#load_screen {
   height: 100vmax;
 }
 
-div#loading_screen > div#loading {
+div#loading_screen>div#loading {
   color: rgb(255, 255, 255);
   width: 120px;
   height: 24px;
