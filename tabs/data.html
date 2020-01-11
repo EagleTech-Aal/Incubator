@@ -1,138 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Data</title>
 
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Data</title>
 
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
-    <link rel="stylesheet" href="../styles/dom.css" />
-    <link rel="stylesheet" href="../styles/loading.css" />
-    <link rel="stylesheet" href="../styles/loadScreen.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script>
-      window.addEventListener("load", function() {
-        var load_screen = document.getElementById("load_screen");
-        document.body.removeChild(load_screen);
-        $('body').css('display', 'none');
-        $('body').fadeIn(100);
-      });
-    </script>
-  </head>
-  <body>
-    <!-- Loading Screen -->
+  <link rel="stylesheet" href="../styles/dom.css" />
+  <link rel="stylesheet" href="../styles/loading.css" />
+  <link rel="stylesheet" href="../styles/loadScreen.css" />
 
-    <div id="load_screen">
-      <div id="loading">
-          <div id="center-group">
-              <span class="load-text load_position">Loading...</span>
-w          </div>
+  <script>
+    window.addEventListener("load", function () {
+      var load_screen = document.getElementById("load_screen");
+      document.body.removeChild(load_screen);
+      $('body').css('display', 'none');
+      $('body').fadeIn(100);
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Loading Screen -->
+
+  <div id="load_screen">
+    <div id="loading">
+      <div id="center-group">
+        <span class="load-text load_position">Loading...</span>
+        <div class="lds-ripple">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <a class="navbar-brand" href="../index.html">Incubator</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item  active">
+          <a class="nav-link" href="#">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./analysis.html">Analysis</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Body -->
+
+  <div class="grid-container">
+    <!-- Heading Box -->
+
+    <div class="heading">
+
+    </div>
+
+    <!-- First Chart -->
+
+    <div class="chartOne">
+      <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Bar Chart</span>
+      <div class="flourish-embed" data-src="visualisation/931628" style="padding: 5em;">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
       </div>
     </div>
 
-    <!-- Navbar -->
+    <!-- Second Chart -->
 
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-      <a class="navbar-brand" href="../index.html">Incubator</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item  active">
-            <a class="nav-link" href="#">Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./analysis.html">Analysis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./about.html">About</a>
-          </li>
-        </ul>
+    <div class="chartTwo">
+      <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Race Chart</span>
+      <div class="flourish-embed" data-src="visualisation/931473" style="padding: 1em; margin-top: 4em;">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
       </div>
-    </nav>
+    </div>
 
-              <!-- Body -->
-      
-              <div class="grid-container">
-                <!-- Heading Box -->
-          
-                <div class="heading">
-                  
-              </div>
-          
-              <!-- First Chart -->
-          
-              <div class="chartOne">
-                <span
-                  style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
-                  >Bar Chart</span
-                >
-                <div
-                  class="flourish-embed"
-                  data-src="visualisation/931628"
-                  style="padding: 5em;"
-                >
-                <script src="https://public.flourish.studio/resources/embed.js"></script>
-                </div>
-              </div>
-          
-              <!-- Second Chart -->
-          
-              <div class="chartTwo">
-                <span
-                  style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;"
-                  >Race Chart</span
-                >
-                <div
-                  class="flourish-embed"
-                  data-src="visualisation/931473"
-                  style="padding: 1em; margin-top: 4em;"
-                >
-                  <script src="https://public.flourish.studio/resources/embed.js"></script>
-                </div>
-              </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue feeter">
 
-                 <!-- Footer -->
-      <footer class="page-footer font-small blue feeter">
-      
-          <!-- Copyright -->
-          <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-          </div>
-          <!-- Copyright -->
-        
-        </footer>
-      <!-- Footer -->
-  </body>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+</body>
+
 </html>
