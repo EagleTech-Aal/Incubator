@@ -137,130 +137,73 @@
       <!-- Heading Box -->
 
       <div class="heading">
-        <div class="jumbotron">
-          <h1 style="padding: 1em;">Key Words</h1>
+        <h1 style="padding: 1em;">Key Words</h1>
 
-          <table>
-            <tr>
-              <td style='width: 50%; padding: 5em;'>
-                Text about how keywords were selected.<br>
-                More text RE: removing 'dolophine', 'sublimaze', 'tylenol4' from data--less than 1,000 tweets from
-                2007.01.01-2019.09.30.
-              </td>
-              <td style='width: 25%; padding-left: 10px;'>
-                <!-- categories -->
-                <div id='myBtnContainer'>
-                  <button class='btn2 active2' id='all' onclick='filter("all");'><b>Show All Keywords</b></button>
-                  <button class='btn2' id='codei' onclick='filter("codei");'>Codeine/Tylenol #3</button>
-                  <button class='btn2' id='demer' onclick='filter("demer");'>Demerol/Meperidine</button>
-                  <button class='btn2' id='heroi' onclick='filter("heroi");'>Heroin</button>
-                  <button class='btn2' id='hydro' onclick='filter("hydro");'>Hydromorphone/Dilaudid</button>
-                  <button class='btn2' id='fenta' onclick='filter("fenta");'>Fentanyl/Duragesic</button>
-                  <button class='btn2' id='vicod' onclick='filter("vicod");'>Vicodin/Norco/Hydrocodone</button>
-                  <button class='btn2' id='metha' onclick='filter("metha");'>Methadone</button>
-                  <button class='btn2' id='morph' onclick='filter("morph");'>Morphine</button>
-                  <button class='btn2' id='opiat' onclick='filter("opiat");'>Opiate(s)</button>
-                  <button class='btn2' id='opioi' onclick='filter("opioi");'>Opioid(s)</button>
-                  <button class='btn2' id='oxycod' onclick='filter("oxycod");'>Oxycodone/Percocet</button>
-                  <button class='btn2' id='oxycon' onclick='filter("oxycon");'>Oxycontin</button>
-                  <button class='btn2' id='trama' onclick='filter("trama");'>Tramadol/Ultram</button>
-                </div>
-              </td>
-              <td style='padding-left: 10px; padding: 1em;'>
-                <!-- keywords -->
-                <div class="container">
-                  <div class="filterDiv codei show">Codeine</div>
-                  <div class="filterDiv demer show">Demerol</div>
-                  <div class="filterDiv hydro show">Dilaudid</div>
-                  <div class="filterDiv fenta show">Duragesic</div>
-                  <div class="filterDiv fenta show">Fentanyl</div>
-                  <div class="filterDiv heroi show">Heroin</div>
-                  <div class="filterDiv vicod show">Hydrocodone</div>
-                  <div class="filterDiv hydro show">Hydromorphone</div>
-                  <div class="filterDiv vicod show">Hydros</div>
-                  <div class="filterDiv demer show">Meperidine</div>
-                  <div class="filterDiv metha show">Methadone</div>
-                  <div class="filterDiv morph show">Morphine</div>
-                  <div class="filterDiv vicod show">Norco</div>
-                  <div class="filterDiv opiat show">Opiate</div>
-                  <div class="filterDiv opiat show">Opiates</div>
-                  <div class="filterDiv opioi show">Opioid</div>
-                  <div class="filterDiv opioi show">Opioids</div>
-                  <div class="filterDiv opioi show">Opoid</div>
-                  <div class="filterDiv opioi show">Opoids</div>
-                  <div class="filterDiv oxycod show">Oxy</div>
-                  <div class="filterDiv oxycod show">Oxycodone</div>
-                  <div class="filterDiv oxycon show">Oxycontin</div>
-                  <div class="filterDiv oxycon show">Oxycotin</div>
-                  <div class="filterDiv oxycon show">Oxycotton</div>
-                  <div class="filterDiv oxycod show">Percocet</div>
-                  <div class="filterDiv oxycod show">Percs</div>
-                  <div class="filterDiv trama show">Tramadol</div>
-                  <div class="filterDiv codei show">Tylenol3</div>
-                  <div class="filterDiv trama show">Ultram</div>
-                  <div class="filterDiv vicod show">Vicodin</div>
-                  <div class="filterDiv vicod show">Vikes</div>
-                </div>
-              </td>
-            </tr>
-          </table>
-
-        </div>
+        <table>
+          <tr>
+            <td style='width: 50%; padding: 5em;'>
+              Text about how keywords were selected.<br>
+              More text RE: removing 'dolophine', 'sublimaze', 'tylenol4' from data--less than 1,000 tweets from
+              2007.01.01-2019.09.30.
+            </td>
+            <td style='width: 25%; padding-left: 10px;'>
+              <!-- categories -->
+              <div id='myBtnContainer'>
+                <button class='btn2 active2' id='all' onclick='filter("all");'><b>Show All Keywords</b></button>
+                <button class='btn2' id='codei' onclick='filter("codei");'>Codeine/Tylenol #3</button>
+                <button class='btn2' id='demer' onclick='filter("demer");'>Demerol/Meperidine</button>
+                <button class='btn2' id='heroi' onclick='filter("heroi");'>Heroin</button>
+                <button class='btn2' id='hydro' onclick='filter("hydro");'>Hydromorphone/Dilaudid</button>
+                <button class='btn2' id='fenta' onclick='filter("fenta");'>Fentanyl/Duragesic</button>
+                <button class='btn2' id='vicod' onclick='filter("vicod");'>Vicodin/Norco/Hydrocodone</button>
+                <button class='btn2' id='metha' onclick='filter("metha");'>Methadone</button>
+                <button class='btn2' id='morph' onclick='filter("morph");'>Morphine</button>
+                <button class='btn2' id='opiat' onclick='filter("opiat");'>Opiate(s)</button>
+                <button class='btn2' id='opioi' onclick='filter("opioi");'>Opioid(s)</button>
+                <button class='btn2' id='oxycod' onclick='filter("oxycod");'>Oxycodone/Percocet</button>
+                <button class='btn2' id='oxycon' onclick='filter("oxycon");'>Oxycontin</button>
+                <button class='btn2' id='trama' onclick='filter("trama");'>Tramadol/Ultram</button>
+              </div>
+            </td>
+            <td style='padding-left: 10px; padding: 1em;'>
+              <!-- keywords -->
+              <div class="container">
+                <div class="filterDiv codei show">Codeine</div>
+                <div class="filterDiv demer show">Demerol</div>
+                <div class="filterDiv hydro show">Dilaudid</div>
+                <div class="filterDiv fenta show">Duragesic</div>
+                <div class="filterDiv fenta show">Fentanyl</div>
+                <div class="filterDiv heroi show">Heroin</div>
+                <div class="filterDiv vicod show">Hydrocodone</div>
+                <div class="filterDiv hydro show">Hydromorphone</div>
+                <div class="filterDiv vicod show">Hydros</div>
+                <div class="filterDiv demer show">Meperidine</div>
+                <div class="filterDiv metha show">Methadone</div>
+                <div class="filterDiv morph show">Morphine</div>
+                <div class="filterDiv vicod show">Norco</div>
+                <div class="filterDiv opiat show">Opiate</div>
+                <div class="filterDiv opiat show">Opiates</div>
+                <div class="filterDiv opioi show">Opioid</div>
+                <div class="filterDiv opioi show">Opioids</div>
+                <div class="filterDiv opioi show">Opoid</div>
+                <div class="filterDiv opioi show">Opoids</div>
+                <div class="filterDiv oxycod show">Oxy</div>
+                <div class="filterDiv oxycod show">Oxycodone</div>
+                <div class="filterDiv oxycon show">Oxycontin</div>
+                <div class="filterDiv oxycon show">Oxycotin</div>
+                <div class="filterDiv oxycon show">Oxycotton</div>
+                <div class="filterDiv oxycod show">Percocet</div>
+                <div class="filterDiv oxycod show">Percs</div>
+                <div class="filterDiv trama show">Tramadol</div>
+                <div class="filterDiv codei show">Tylenol3</div>
+                <div class="filterDiv trama show">Ultram</div>
+                <div class="filterDiv vicod show">Vicodin</div>
+                <div class="filterDiv vicod show">Vikes</div>
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
-
-      <!-- First Chart -->
-
-      <div class="chartOne">
-        <!-- <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Bar Chart</span>
-        <div class="flourish-embed" data-src="visualisation/931612" style="padding: 5em;">
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-        </div> -->
-
-        <div class="w3-col s6">
-          <div class="flourish-embed" data-src="visualisation/956529">
-            <div
-              style="width:100%!important;margin:0 0
-              4px!important;text-align:right!important;font-family:Helvetica,sans-serif!important;color:#888!important;font-size:11px!important;font-weight:bold!important;font-style:normal!important;-webkit-font-smoothing:antialiased!important;box-shadow:none!important;">
-              <a href="https://public.flourish.studio/visualisation/956529/?utm_source=showcase&amp;utm_campaign=visualisation/956529"
-                target="_top"
-                style="display:inline-block!important;text-decoration:none!important;font:inherit!important;color:inherit!important;border:none!important;margin:0 5px!important;box-shadow:none!important;"></a>
-            </div>
-          </div>
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-        </div>
-      </div>
-
-      <!-- Second Chart -->
-
-      <div class="chartTwo">
-        <!-- <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Race Chart</span>
-        <div class="flourish-embed" data-src="visualisation/931473" style="padding: 1em; margin-top: 4em;">
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-        </div> -->
-
-        <div class="w3-col s6">
-          <div class="flourish-embed" data-src="visualisation/930623">
-            <div class="flourish-credit"
-              style="width:100%!important;margin:0 0 4px!important;text-align:right!important;font-family:Helvetica,sans-serif!important;color:#888!important;font-size:11px!important;font-weight:bold!important;font-style:normal!important;-webkit-font-smoothing:antialiased!important;box-shadow:none!important;">
-              <a href="https://public.flourish.studio/visualisation/930623/?utm_source=showcase&amp;utm_campaign=visualisation/930623"
-                target="_top"
-                style="display:inline-block!important;text-decoration:none!important;font:inherit!important;color:inherit!important;border:none!important;margin:0 5px!important;box-shadow:none!important;"></span></a>
-            </div>
-          </div>
-          <script src="https://public.flourish.studio/resources/embed.js"></script>
-        </div>
-      </div>
-
-
-      <!-- Footer -->
-      <footer class="page-footer font-small blue feeter">
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-          <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-      </footer>
-      <!-- Footer -->
     </div>
 </body>
 
