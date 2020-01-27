@@ -17,12 +17,16 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="./styles/dom.css" />
+
   <!-- <link rel="stylesheet" href="./styles/loading.css" /> -->
   <link rel="stylesheet" href="./styles/main-loading.css">
   <link rel="stylesheet" href="./styles/mainLoadScreen.css" />
   <link rel="stylesheet" href="./styles/main-header.scss">
   <link rel="stylesheet" href="./styles/button.css">
   <link rel="stylesheet" href="./styles/index/dom.css">
+
+
+  <script src="./javascript/index/desc.ts" type="text/typescript"></script>
 
   <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
 
@@ -75,7 +79,7 @@
 
   <div>
     <!-- Navbar -->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <!-- <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
       <a class="navbar-brand" href="#">Incubator</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,41 +101,65 @@
           </li>
         </ul>
       </div>
+    </nav> -->
+
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Incubator</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tabs/data.html">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tabs/analysis.html">Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./tabs/about.html">About</a>
+          </li>
+        </ul>
+      </div>
     </nav>
+
     <!-- Body -->
-
-
     <div>
-      <?xml version="1.0" encoding="utf-8"?>
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1967" height="471"
-        preserveAspectRatio="xMidYMid" viewBox="0 0 1967 471"
+      <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" width="2081" height="566" preserveAspectRatio="xMidYMid"
+        viewBox="0 0 2081 566"
         style="z-index:1;margin-right:-2px;display:block;background-repeat-y:initial;background-repeat-x:initial;animation-play-state:paused">
         <g transform="" style="animation-play-state:paused">
-          <linearGradient id="lg-0.4916011206933406" x1="0" x2="1" y1="0" y2="0" style="animation-play-state:paused">
-            <stop stop-color="#66b0ff" offset="0" style="animation-play-state:paused"></stop>
-            <stop stop-color="#006aff" offset="1" style="animation-play-state:paused"></stop>
+          <linearGradient id="lg-0.15656127736579517" x1="0" x2="1" y1="0" y2="0" style="animation-play-state:paused">
+            <stop stop-color="#033970" offset="0" style="animation-play-state:paused"></stop>
+
+
+            <stop stop-color="#86ffff" offset="1" style="animation-play-state:paused"></stop>
           </linearGradient>
-          <path fill="url(#lg-0.4916011206933406)" opacity="0.4"
-            d="M 0 0 L 0 404.767 Q 196.7 420.752 393.4 397.911 T 786.8 369.747 T 1180.2 261.224 T 1573.6 209.654 T 1967 168.725 L 1967 0 Z"
+          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
+            d="M 0 0 L 0 544.898 Q 208.1 473.125 416.2 443.925 T 832.4 376.374 T 1248.6 331.551 T 1664.8 270.307 T 2081 254.409 L 2081 0 Z"
             style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.4916011206933406)" opacity="0.4"
-            d="M 0 0 L 0 413.469 Q 196.7 379.578 393.4 351.103 T 786.8 338.58 T 1180.2 266.367 T 1573.6 254.375 T 1967 220.403 L 1967 0 Z"
+          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
+            d="M 0 0 L 0 514.861 Q 208.1 476.054 416.2 431.262 T 832.4 371.601 T 1248.6 360.188 T 1664.8 309.53 T 2081 242.971 L 2081 0 Z"
             style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.4916011206933406)" opacity="0.4"
-            d="M 0 0 L 0 399.755 Q 196.7 399.753 393.4 371.166 T 786.8 346.094 T 1180.2 265.928 T 1573.6 226.029 T 1967 190.726 L 1967 0 Z"
+          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
+            d="M 0 0 L 0 494.884 Q 208.1 471.353 416.2 433.044 T 832.4 398.929 T 1248.6 324.607 T 1664.8 292.626 T 2081 248.907 L 2081 0 Z"
             style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.4916011206933406)" opacity="0.4"
-            d="M 0 0 L 0 441.56 Q 196.7 412.586 393.4 376.293 T 786.8 305.935 T 1180.2 272.943 T 1573.6 233.343 T 1967 165.721 L 1967 0 Z"
+          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
+            d="M 0 0 L 0 477.271 Q 208.1 546.831 416.2 503.319 T 832.4 399.805 T 1248.6 319.837 T 1664.8 279.695 T 2081 268.769 L 2081 0 Z"
             style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.4916011206933406)" opacity="0.4"
-            d="M 0 0 L 0 456.209 Q 196.7 372.895 393.4 356.496 T 786.8 323.947 T 1180.2 293.038 T 1573.6 244.865 T 1967 218.143 L 1967 0 Z"
+          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
+            d="M 0 0 L 0 533.428 Q 208.1 465.374 416.2 428.614 T 832.4 400.914 T 1248.6 358.854 T 1664.8 306.264 T 2081 281.419 L 2081 0 Z"
             style="opacity:0.4;animation-play-state:paused"></path>
         </g>
       </svg>
-
     </div>
     <span class="title">Welcome to Pharmakeia!</span>
-
 
     <div class="grid-container">
       <!-- Heading Box -->
@@ -205,6 +233,7 @@
         </table>
       </div>
     </div>
+  </div>
 </body>
 
 </html>

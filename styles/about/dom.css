@@ -108,7 +108,11 @@ h1 a {
 }
 
 .center-two {
-  margin-top: 3%;
+  position: relative;
+  margin-top: 6%;
+  display: block;
+  /* top: 50%; */
+  left: auto;
 }
 
 #title-allign {
