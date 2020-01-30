@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Asap|Exo+2:500|Fredoka+One|Kanit|Merriweather+Sans|Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+/* font-family: 'Exo 2', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Asap', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Fredoka One', cursive; 
+font-family: "Open Sans", sans-serif;
+font-family: 'Patua One', cursive;
+*/
+
+
+.gitcode {
+    margin-top: 5em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 5em;
+}
+
+.card-container {
+    width: auto;
+    height: 1600px;
+    background-color: rgb(235, 235, 235);
+    margin-top: 5em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-radius: .3em;
+}
+
+.card-image {
+    align-self: center;
+    width: 200px;
+    height: 200px;
+}
+
+.card-space {
+    margin: 5em !important;
+    border-width: 0;
+}
+
+.style-container {
+    width: auto;
+    height: 1500px;
+    background-color: rgb(52, 58, 64);
+    padding-top: 5em;
+    margin-top: 5em;
+}
+
+.style-container>h1 {
+    font-family: 'Patua One', cursive;
+    text-align: center;
+    font-size: 80px;
+}
+
+.style-container>div>span {
+    display: table;
+    margin: 0 auto;
+    padding-top: 2em;
+    font-family: 'Patua One', cursive;
+    font-size: 50px;
+}
+
+.card-article {
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+.style-code {
+    text-align: center;
+    margin-top: 5em;
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+.style-code>span {
+
+    font-family: 'Patua One', cursive;
+    font-size: 50px;
+}
+
+.style-code>div>span {
+    font-family: 'Asap', sans-serif;
+    text-align: center;
+    font-size: 12px;
+}
+
+.card-article>span {
+    color: aliceblue;
+    font-family: 'Asap', sans-serif !important;
+    font-size: 20px !important;
+}
+
+.card-text {
+    font-family: 'Asap', sans-serif !important;
+}
