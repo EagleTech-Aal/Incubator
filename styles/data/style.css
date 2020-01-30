@@ -94,3 +94,14 @@ font-family: 'Patua One', cursive;
 .card-text {
     font-family: 'Asap', sans-serif !important;
 }
+
+.chart-set {
+    margin-top: 5em;
+    margin-left: 8%;
+}
+
+.chart-set>div {
+    margin: 1em;
+    width: 45%;
+    display: inline-block;
+}
