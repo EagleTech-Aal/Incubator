@@ -14,7 +14,7 @@ body {
 }
 
 .card {
-    width: 450px;
+    /* width: 450px;
     height: 250px;
     background-color: #fff;
     background: linear-gradient(#f8f8f8, #fff);
@@ -22,7 +22,7 @@ body {
     border-radius: 6px;
     overflow: hidden;
     position: relative;
-    margin: 1.5rem;
+    margin: 1.5rem; */
 }
 
 .card h1 {
