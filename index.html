@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="./styles/button.css">
   <link rel="stylesheet" href="./styles/index/dom.css">
 
+  <link rel="stylesheet" href="./styles/animate.css">
+
 
   <script src="./javascript/index/desc.ts" type="text/typescript"></script>
 
@@ -129,7 +131,7 @@
     </nav>
 
     <!-- Body -->
-    <div>
+    <!-- <div>
       <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" width="2081" height="566" preserveAspectRatio="xMidYMid"
         viewBox="0 0 2081 566"
@@ -158,8 +160,13 @@
             style="opacity:0.4;animation-play-state:paused"></path>
         </g>
       </svg>
-    </div>
-    <span class="title">Welcome to Pharmakeia!</span>
+    </div> -->
+
+    <img src="./images/animated-blob.svg" alt="" style="position: relative;">
+    <span class="title animated bounce">Pharmakeia</span>
+    </img>
+
+
 
     <div class="grid-container">
       <!-- Heading Box -->
@@ -176,7 +183,8 @@
             </td>
             <td style='width: 25%; padding-left: 10px;'>
               <!-- categories -->
-              <div id='myBtnContainer'>r</div> <button class='btn2 active2' id='all' onclick='filter("all");'><b>Show All
+              <div id='myBtnContainer'>r</div> <button class='btn2 active2' id='all' onclick='filter("all");'><b>Show
+                  All
                   Keywords</b></button>
               <button class='btn2' id='codei' onclick='filter("codei");'>Codeine/Tylenol #3</button>
               <button class='btn2' id='demer' onclick='filter("demer");'>Demerol/Meperidine</button>

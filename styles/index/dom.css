@@ -8,12 +8,12 @@ body {
 }
 
 .title {
-    /* position: absolute; */
-    margin-top: 50%;
+    position: absolute;
+    /* margin-top: 50%; */
     font-family: 'Patua One', cursive;
-    font-size: 80px;
-    top: -380px;
-    left: -200px;
-    color: aliceblue;
-    z-index: 2;
+    font-size: 150px;
+    top: 5%;
+    left: 5%;
+    color: rgb(38, 48, 57);
+    /* z-index: 2; */
 }
