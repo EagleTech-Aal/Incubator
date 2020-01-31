@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Asap|Exo+2:500|Fredoka+One|Kanit|Merriweather+Sans|Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+
 /* font-family: 'Exo 2', sans-serif;
 font-family: 'Merriweather Sans', sans-serif;
 font-family: 'Kanit', sans-serif;
@@ -35,6 +36,7 @@ font-family: 'Patua One', cursive;
 }
 
 .card-space {
+    min-width: 17em;
     margin: 5em !important;
     border-width: 0;
 }

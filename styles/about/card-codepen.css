@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Asap|Exo+2:500|Fredoka+One|Kanit|Merriweather+Sans|Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:600&display=swap');
+
+/* font-family: 'Exo 2', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Asap', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Fredoka One', cursive; 
+font-family: "Open Sans", sans-serif;
+font-family: 'Patua One', cursive;
+font-family: 'Roboto Slab', serif;
+*/
+
+
+* {
+    box-sizing: border-box;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+h6 {
+    margin: 5px 0;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.card-container {
+    background-color: rgb(76, 91, 140);
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+    font-family: 'Righteous', cursive;
+    color: rgb(233, 233, 233);
+    padding-top: 30px;
+    position: relative;
+    width: 300px;
+    min-width: 200px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.card-container .pro {
+    color: rgb(18, 45, 104);
+    background-color: #FEBB0B;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 7px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.card-container .round {
+    border: 1px solid hsl(223, 3%, 60%);
+    border-radius: 50%;
+    border-width: 0em;
+    padding: 7px;
+}
+
+button.primary {
+    background-color: hsl(228, 38%, 23%);
+    border: 1px solid hsl(228, 38%, 23%);
+    border-radius: 3px;
+    /* color: #231E39; */
+    font-family: 'Righteous', cursive;
+    font-weight: 500;
+    padding: 10px 25px;
+    color: rgb(219, 235, 255);
+}
+
+button.primary.ghost {
+    background-color: transparent;
+    border-width: 2px;
+    color: hsl(0, 0%, 91%);
+}
+
+.skills {
+    background-color: #182548;
+    text-align: left;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 0 0 10px 10px;
+}
+
+.skills ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.skills ul li {
+    border: 1px solid #334268;
+    /* background-color: #334268; */
+    border-radius: 10px;
+    border-width: 2px;
+    display: inline-block;
+    font-size: 12px;
+    margin: 0 7px 7px 0;
+    padding: 7px;
+}
+
+.profile-card {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+    align-self: center;
+}
+
+.profile-card>div {
+    display: inline-block;
+    margin: 1em;
+}
+
+.profile-card>div>img {
+    width: 150px;
+    height: 150px;
+}
+
+.title-text {
+    color: rgb(58, 58, 58);
+    margin-top: 2em;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 50px;
+}
