@@ -99,11 +99,13 @@ font-family: 'Patua One', cursive;
 
 .chart-set {
     margin-top: 5em;
-    margin-left: 8%;
+    margin-left: 4%;
+    margin-bottom: 12em;
+    padding-top: 4em;
 }
 
 .chart-set>div {
     margin: 1em;
-    width: 45%;
+    width: 47%;
     display: inline-block;
 }
