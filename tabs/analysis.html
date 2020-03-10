@@ -21,6 +21,8 @@
     window.addEventListener("load", function () {
       var load_screen = document.getElementById("load_screen");
       document.body.removeChild(load_screen);
+      $('body').css('display', 'none');
+      $('body').fadeIn(100);
     });
   </script>
 </head>
@@ -30,10 +32,13 @@
 
   <div id="load_screen">
     <div id="loading">
-      <div class="lds-ripple">
-        <div></div>
-        <div></div>
-        <div></div>
+      <div id="center-group">
+        <span class="load-text load_position">Loading...</span>
+        <div class="lds-ripple">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </div>
   </div>

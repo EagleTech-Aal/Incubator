@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Asap|Exo+2:500|Fredoka+One|Kanit|Merriweather+Sans|Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+
+/* font-family: 'Exo 2', sans-serif;
+font-family: 'Merriweather Sans', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Asap', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Fredoka One', cursive; 
+font-family: "Open Sans", sans-serif;
+font-family: 'Patua One', cursive;
+font-family: 'Bree Serif', serif;
+*/
+
+
 html,
 body {
     width: 100%;
@@ -9,11 +25,46 @@ body {
 
 .title {
     position: absolute;
-    /* margin-top: 50%; */
-    font-family: 'Patua One', cursive;
-    font-size: 150px;
     top: 5%;
-    left: 5%;
+    /* width: 100%;
+    margin: 0 auto; */
+    margin-left: 5%;
+    font-family: 'Patua One', cursive;
+    font-size: 130px;
     color: rgb(38, 48, 57);
-    /* z-index: 2; */
+}
+
+.page-text {
+    position: absolute;
+    top: 25em;
+    left: 5em;
+    width: 30em;
+    font-size: 18px;
+    font-family: 'Bree Serif', serif;
+    opacity: .8;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(0, 75, 142, 0.3);
+    border-radius: 30px;
+    background-color: transparent;
+    /* box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.2); */
+    padding: 15px;
+}
+
+.page-text-two {
+    position: absolute;
+    top: 25em;
+    left: 70em;
+    width: 30em;
+    font-size: 18px;
+    opacity: .8;
+    font-family: 'Bree Serif', serif;
+    /* color: rgb(206, 232, 255); */
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgba(254, 255, 255, 0.7);
+    border-radius: 30px;
+    background-color: transparent;
+    /* box-shadow: 0px 0px 0px 8px rgba(0, 0, 0, 0.2); */
+    padding: 15px;
 }

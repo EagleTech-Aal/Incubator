@@ -9,9 +9,6 @@
 
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -26,28 +23,11 @@
   <link rel="stylesheet" href="./styles/index/dom.css">
 
   <link rel="stylesheet" href="./styles/animate.css">
+  <link rel="stylesheet" href="./styles/index/text-color.css">
 
 
   <script src="./javascript/index/desc.ts" type="text/typescript"></script>
   <link href="https://fonts.googleapis.com/css?family=Patua+One&display=swap" rel="stylesheet">
-
-  <!-- NOT MINE -->
-
-  <!-- <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script> -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
-  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
-  <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media='all'> -->
-  <!-- <link rel="stylesheet" type="text/css" href="webtables.css" media='all'> -->
-  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" media='all'> -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  <!-- <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'> -->
-  <!-- <link rel="stylesheet" type="text/css" href="style.css" media='all'> -->
-
-  <!-- NOT MINE -->
-
-
 
   <!-- Loading Page -->
 
@@ -59,7 +39,6 @@
       // $('h1:after').css('','');
       $('body').css('display', 'none');
       $('body').fadeIn(1000);
-
     });
   </script>
 
@@ -74,39 +53,15 @@
 
   <div id="load_screen">
     <div id="loading">
-      <h1 id="loading_page" data-shadow='Incubator'>Incubator</h1>
+      <h1 id="loading_page" data-shadow='Pharmakeia'>Pharmakeia</h1>
     </div>
   </div>
 
   <div>
-    <!-- Navbar -->
-    <!-- <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-      <a class="navbar-brand" href="#">Incubator</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./tabs/data.html">Data</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./tabs/analysis.html">Analysis</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./tabs/about.html">About</a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
 
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Incubator</a>
+      <a class="navbar-brand" href="#">Pharmakeia</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -130,48 +85,38 @@
     </nav>
 
     <!-- Body -->
-    <!-- <div>
-      <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink" width="2081" height="566" preserveAspectRatio="xMidYMid"
-        viewBox="0 0 2081 566"
-        style="z-index:1;margin-right:-2px;display:block;background-repeat-y:initial;background-repeat-x:initial;animation-play-state:paused">
-        <g transform="" style="animation-play-state:paused">
-          <linearGradient id="lg-0.15656127736579517" x1="0" x2="1" y1="0" y2="0" style="animation-play-state:paused">
-            <stop stop-color="#033970" offset="0" style="animation-play-state:paused"></stop>
 
+    <div class="text">
+      <img src="./images/animated-blob.svg" alt="" style="display: flex;">
+      <div class="title animated bounceInLeft">
+        <span class="animated bounce">Pharmakeia</span>
+      </div>
+      </img>
 
-            <stop stop-color="#86ffff" offset="1" style="animation-play-state:paused"></stop>
-          </linearGradient>
-          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
-            d="M 0 0 L 0 544.898 Q 208.1 473.125 416.2 443.925 T 832.4 376.374 T 1248.6 331.551 T 1664.8 270.307 T 2081 254.409 L 2081 0 Z"
-            style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
-            d="M 0 0 L 0 514.861 Q 208.1 476.054 416.2 431.262 T 832.4 371.601 T 1248.6 360.188 T 1664.8 309.53 T 2081 242.971 L 2081 0 Z"
-            style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
-            d="M 0 0 L 0 494.884 Q 208.1 471.353 416.2 433.044 T 832.4 398.929 T 1248.6 324.607 T 1664.8 292.626 T 2081 248.907 L 2081 0 Z"
-            style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
-            d="M 0 0 L 0 477.271 Q 208.1 546.831 416.2 503.319 T 832.4 399.805 T 1248.6 319.837 T 1664.8 279.695 T 2081 268.769 L 2081 0 Z"
-            style="opacity:0.4;animation-play-state:paused"></path>
-          <path fill="url(#lg-0.15656127736579517)" opacity="0.4"
-            d="M 0 0 L 0 533.428 Q 208.1 465.374 416.2 428.614 T 832.4 400.914 T 1248.6 358.854 T 1664.8 306.264 T 2081 281.419 L 2081 0 Z"
-            style="opacity:0.4;animation-play-state:paused"></path>
-        </g>
-      </svg>
-    </div> -->
+      <div class="page-text animated bounceInLeft">
+        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad architecto consectetur tempora enim modi vero
+          quos incidunt illum ullam dolorum impedit adipisci maxime fugiat, inventore nihil placeat consequuntur commodi
+          repellendus non eaque earum exercitationem porro molestias. Eligendi natus voluptatem ullam veritatis
+          architecto corporis dolorem aliquam, neque quasi, error provident illo asperiores commodi exercitationem
+          reiciendis facere amet distinctio odit repellendus delectus temporibus alias! Esse dolores autem delectus,
+          dolore facere nesciunt accusamus dolor alias quam maxime, quisquam asperiores, dolorum animi odio nam.</span>
+      </div>
 
-    <img src="./images/animated-blob.svg" alt="" style="position: relative;">
-    <span class="title animated bounce">Pharmakeia</span>
-    </img>
+      <div class="page-text-two animated bounceInRight">
+        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad architecto consectetur tempora enim modi vero
+          quos incidunt illum ullam dolorum impedit adipisci maxime fugiat, inventore nihil placeat consequuntur commodi
+          repellendus non eaque earum exercitationem porro molestias. Eligendi natus voluptatem ullam veritatis
+          architecto corporis dolorem aliquam, neque quasi, error provident illo asperiores commodi exercitationem
+          reiciendis facere amet distinctio odit repellendus delectus temporibus alias! Esse dolores autem delectus,
+          dolore facere nesciunt accusamus dolor alias quam maxime, quisquam asperiores, dolorum animi odio nam.</span>
+      </div>
+    </div>
 
-
-
-    <div class="grid-container">
+    <div class="grid-container" style="margin-top: 10%;">
       <!-- Heading Box -->
 
       <div class="heading">
-        <h1 style="padding: 1em;">Key Words</h1>
+        <h1 style="padding: 1em; font-family: 'Patua One', cursive;">Key Words</h1>
 
         <table>
           <tr>
@@ -182,7 +127,7 @@
             </td>
             <td style='width: 25%; padding-left: 10px;'>
               <!-- categories -->
-              <div id='myBtnContainer'>r</div> <button class='btn2 active2' id='all' onclick='filter("all");'><b>Show
+              <div id='myBtnContainer'></div> <button class='btn2 active2' id='all' onclick='filter("all");'><b>Show
                   All
                   Keywords</b></button>
               <button class='btn2' id='codei' onclick='filter("codei");'>Codeine/Tylenol #3</button>
@@ -239,7 +184,6 @@
       </tr>
       </table>
     </div>
-  </div>
   </div>
 </body>
 
