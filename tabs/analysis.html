@@ -1,95 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Analysis</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Analysis</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
 
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-  </script>
+    <link rel="stylesheet" href="../styles/analysis/dom.css" />
+    <link rel="stylesheet" href="../styles/loading.css" />
+    <link rel="stylesheet" href="../styles/loadScreen.css" />
+    <link rel="stylesheet" href="../styles/analysis/style.css" />
+    <link rel="stylesheet" href="../styles/dom.css" />
 
-  <link rel="stylesheet" href="../styles/analysis/dom.css" />
-  <link rel="stylesheet" href="../styles/loading.css" />
-  <link rel="stylesheet" href="../styles/loadScreen.css" />
+    <script>
+      window.addEventListener("load", function () {
+        var load_screen = document.getElementById("load_screen");
+        document.body.removeChild(load_screen);
+        $("body").css("display", "none");
+        $("body").fadeIn(100);
+      });
+    </script>
+  </head>
 
-  <script>
-    window.addEventListener("load", function () {
-      var load_screen = document.getElementById("load_screen");
-      document.body.removeChild(load_screen);
-      $("body").css("display", "none");
-      $("body").fadeIn(100);
-    });
-  </script>
-</head>
+  <body>
+    <!-- Loading Screen -->
 
-<body>
-  <!-- Loading Screen -->
-
-  <div id="load_screen">
-    <div id="loading">
-      <div id="center-group">
-        <span class="load-text load_position">Loading...</span>
-        <div class="lds-ripple">
-          <div></div>
-          <div></div>
-          <div></div>
+    <div id="load_screen">
+      <div id="loading">
+        <div id="center-group">
+          <span class="load-text load_position">Loading...</span>
+          <div class="lds-ripple">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Navbar -->
+    <!-- Navbar -->
 
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-    <a class="navbar-brand" href="../index.html">Incubator</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="../index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./data.html">Data</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./technologies.html">Technologies</a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Analysis<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./visualization.html">Visualization</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./covid19.html">COVID-19</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.html">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+      <a class="navbar-brand" href="../index.html">Incubator</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./data.html">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./technologies.html">Technologies</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Analysis<span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./visualization.html">Visualization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./covid19.html">COVID-19</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <div>
-    <img src="../images/construction.gif" style="width: 200px; margin-left: 2em; margin-top: 2em;" alt="" />
-  </div>
+    <!-- Boooootstrap -->
 
-  <div style="width: auto; display: flex; align-self: center; margin-top: 10%; margin-left: 4%;justify-content: center;
-  flex-direction: row;
-  align-items: center !important;">
-    <div>
-      <div></div>
-      <img src="../images/lego-dancing.gif" style="width: 200px; margin-top: 5em;" alt="" />
-    </div>
-  </div>
-</body>
+    <main role="main" style="margin-top: 5em;">
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+      <div class="container marketing">
 
+       
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <img
+              
+              src="../images/heroin.png"
+              alt="Generic placeholder image"
+              width="140"
+              height="100"
+            />
+            <h2>Heroin</h2>
+            <p>
+              Donec sed odio dui. Etiam porta sem malesuada magna mollis
+              euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
+              Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+              Praesent commodo cursus magna.
+            </p>
+            <!-- <p>
+              <a class="btn btn-secondary" href="#" role="button"
+                >View details »</a
+              >
+            </p> -->
+          </div>
+          <!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img
+              
+              src="../images/opioid.png"
+              alt="Generic placeholder image"
+              width="160"
+              height="100"
+            />
+            <h2>Opioids</h2>
+            <p>
+              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
+              eget lacinia odio sem nec elit. Cras mattis consectetur purus sit
+              amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris condimentum nibh.
+            </p>
+            <!-- <p>
+              <a class="btn btn-secondary" href="#" role="button"
+                >View details »</a
+              >
+            </p> -->
+          </div>
+          <!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img
+              
+              src="../images/oxy.png"
+              alt="Generic placeholder image"
+              width="140"
+              height="100"
+            />
+            <h2>Oxycodone</h2>
+            <p>
+              Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
+              egestas eget quam. Vestibulum id ligula porta felis euismod
+              semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+              condimentum nibh, ut fermentum massa justo sit amet risus.
+            </p>
+            <!-- <p>
+              <a class="btn btn-secondary" href="#" role="button"
+                >View details »</a
+              >
+            </p> -->
+          </div>
+          <!-- /.col-lg-4 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              First featurette heading.
+              <span class="text-muted">It'll blow your mind.</span>
+            </h2>
+            <p class="lead">
+              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+              ligula porta felis euismod semper. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+              commodo.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <!-- <img
+              class="featurette-image img-fluid mx-auto"
+              data-src="holder.js/500x500/auto"
+              alt="500x500"
+              style="width: 500px; height: 500px;"
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_172249c16bd%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_172249c16bd%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+              data-holder-rendered="true"
+            /> -->
+            <div class="chart-one">
+              <!-- <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Bar Chart</span>
+              <div class="flourish-embed" data-src="visualisation/931612" style="padding: 5em;">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+              </div> -->
+
+              <div class="w3-col s6">
+                <div class="flourish-embed" data-src="visualisation/956529">
+                  <div
+                    style="
+                      min-width: 500px !important;
+                      width: 100% !important;
+                      margin: 0 0 4px !important;
+                      text-align: right !important;
+                      font-family: Helvetica, sans-serif !important;
+                      color: #888 !important;
+                      font-size: 11px !important;
+                      font-weight: bold !important;
+                      font-style: normal !important;
+                      -webkit-font-smoothing: antialiased !important;
+                      box-shadow: none !important;
+                    "
+                  >
+                    <a
+                      href="https://public.flourish.studio/visualisation/956529/?utm_source=showcase&amp;utm_campaign=visualisation/956529"
+                      target="_top"
+                      style="
+                        display: inline-block !important;
+                        text-decoration: none !important;
+                        font: inherit !important;
+                        color: inherit !important;
+                        border: none !important;
+                        margin: 0 5px !important;
+                        box-shadow: none !important;
+                      "
+                    ></a>
+                  </div>
+                </div>
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">
+              Oh yeah, it's that good.
+              <span class="text-muted">See for yourself.</span>
+            </h2>
+            <p class="lead">
+              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+              ligula porta felis euismod semper. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+              commodo.
+            </p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <!-- <img
+              class="featurette-image img-fluid mx-auto"
+              data-src="holder.js/500x500/auto"
+              alt="500x500"
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_172249c16bf%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_172249c16bf%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+              data-holder-rendered="true"
+              style="width: 500px; height: 500px;"
+            /> -->
+            <div class="chart-two" >
+              <!-- <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Race Chart</span>
+              <div class="flourish-embed" data-src="visualisation/931473" style="padding: 1em; margin-top: 4em;">
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+              </div> -->
+        
+              <div class="w3-col s6">
+                <div class="flourish-embed" data-src="visualisation/930623">
+                  <div class="flourish-credit"
+                    style=" width:100%!important;margin:0 0 4px!important;text-align:right!important;font-family:Helvetica,sans-serif!important;color:#888!important;font-size:11px!important;font-weight:bold!important;font-style:normal!important;-webkit-font-smoothing:antialiased!important;box-shadow:none!important;">
+                    <a href="https://public.flourish.studio/visualisation/930623/?utm_source=showcase&amp;utm_campaign=visualisation/930623"
+                      target="_top"
+                      style="min-width: 500px !important; display:inline-block!important;text-decoration:none!important;font:inherit!important;color:inherit!important;border:none!important;margin:0 5px!important;box-shadow:none!important;"></span></a>
+                  </div>
+                </div>
+                <script src="https://public.flourish.studio/resources/embed.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">
+              And lastly, this one. <span class="text-muted">Checkmate.</span>
+            </h2>
+            <p class="lead">
+              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
+              ligula porta felis euismod semper. Praesent commodo cursus magna,
+              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
+              commodo.
+            </p>
+          </div>
+          <div class="col-md-5">
+            <img
+              class="featurette-image img-fluid mx-auto"
+              data-src="holder.js/500x500/auto"
+              alt="500x500"
+              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_172249c16c0%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_172249c16c0%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+              data-holder-rendered="true"
+              style="width: 500px; height: 500px;"
+            />
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <!-- /END THE FEATURETTES -->
+      </div>
+      <!-- /.container -->
+    </main>
+    <!-- <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="500"
+      height="500"
+      viewBox="0 0 500 500"
+      preserveAspectRatio="none"
+      style="
+        display: none;
+        visibility: hidden;
+        position: absolute;
+        top: -100%;
+        left: -100%;
+      "
+    >
+      <defs><style type="text/css"></style></defs>
+      <text
+        x="0"
+        y="25"
+        style="
+          font-weight: bold;
+          font-size: 25pt;
+          font-family: Arial, Helvetica, Open Sans, sans-serif;
+        "
+      >
+        500x500
+      </text>
+    </svg>
+  </body>
 </html>

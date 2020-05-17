@@ -47,7 +47,7 @@ div.hidden {
   padding: 1em;
 }
 
-.grid-container>div {
+.grid-container > div {
   /* border-radius: 0.3em; */
   background-color: rgb(255, 255, 255);
   text-align: center;
