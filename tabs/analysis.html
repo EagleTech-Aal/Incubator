@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="../styles/loadScreen.css" />
     <link rel="stylesheet" href="../styles/analysis/style.css" />
     <link rel="stylesheet" href="../styles/dom.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../javascript/analysis/script.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <script>
       window.addEventListener("load", function () {
@@ -95,14 +100,14 @@
     </nav>
 
     <!-- Boooootstrap -->
-
+    <div style="text-align: center; margin-top: 4em;"><span class="top-name" >Top Drugs Used</span></div>
     <main role="main" style="margin-top: 5em;">
       <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
       <div class="container marketing">
 
-       
+        
 
         <!-- Three columns of text below the carousel -->
         <div class="row">
@@ -114,13 +119,7 @@
               width="140"
               height="100"
             />
-            <h2>Heroin</h2>
-            <p>
-              Donec sed odio dui. Etiam porta sem malesuada magna mollis
-              euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-              Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-              Praesent commodo cursus magna.
-            </p>
+            <h2>#1 Heroin</h2>
             <!-- <p>
               <a class="btn btn-secondary" href="#" role="button"
                 >View details »</a
@@ -136,13 +135,7 @@
               width="160"
               height="100"
             />
-            <h2>Opioids</h2>
-            <p>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-              eget lacinia odio sem nec elit. Cras mattis consectetur purus sit
-              amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor
-              mauris condimentum nibh.
-            </p>
+            <h2>#2 Opioids</h2>
             <!-- <p>
               <a class="btn btn-secondary" href="#" role="button"
                 >View details »</a
@@ -153,18 +146,12 @@
           <div class="col-lg-4">
             <img
               
-              src="../images/oxy.png"
+              src="../images/hydro.png"
               alt="Generic placeholder image"
-              width="140"
+              width="120"
               height="100"
             />
-            <h2>Oxycodone</h2>
-            <p>
-              Donec sed odio dui. Cras justo odio, dapibus ac facilisis in,
-              egestas eget quam. Vestibulum id ligula porta felis euismod
-              semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-              condimentum nibh, ut fermentum massa justo sit amet risus.
-            </p>
+            <h2>#3 Hydrocodone</h2>
             <!-- <p>
               <a class="btn btn-secondary" href="#" role="button"
                 >View details »</a
@@ -182,14 +169,11 @@
         <div class="row featurette">
           <div class="col-md-7">
             <h2 class="featurette-heading">
-              First featurette heading.
-              <span class="text-muted">It'll blow your mind.</span>
+              Total Tweets by Keyword
+              <span class="text-muted">, 2007-2019:</span>
             </h2>
             <p class="lead">
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-              ligula porta felis euismod semper. Praesent commodo cursus magna,
-              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-              commodo.
+              A bar chart race of total, cumulative Tweets by keyword category.
             </p>
           </div>
           <div class="col-md-5">
@@ -250,14 +234,12 @@
         <div class="row featurette">
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">
-              Oh yeah, it's that good.
-              <span class="text-muted">See for yourself.</span>
+              Tweets by Keyword Over Time:
+              
             </h2>
             <p class="lead">
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-              ligula porta felis euismod semper. Praesent commodo cursus magna,
-              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-              commodo.
+               
+                A line chart of Tweets by keyword category over time.
             </p>
           </div>
           <div class="col-md-5 order-md-1">
@@ -274,7 +256,6 @@
               <div class="flourish-embed" data-src="visualisation/931473" style="padding: 1em; margin-top: 4em;">
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
               </div> -->
-        
               <div class="w3-col s6">
                 <div class="flourish-embed" data-src="visualisation/930623">
                   <div class="flourish-credit"
@@ -290,31 +271,7 @@
           </div>
         </div>
 
-        <hr class="featurette-divider" />
-
-        <div class="row featurette">
-          <div class="col-md-7">
-            <h2 class="featurette-heading">
-              And lastly, this one. <span class="text-muted">Checkmate.</span>
-            </h2>
-            <p class="lead">
-              Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id
-              ligula porta felis euismod semper. Praesent commodo cursus magna,
-              vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus
-              commodo.
-            </p>
-          </div>
-          <div class="col-md-5">
-            <img
-              class="featurette-image img-fluid mx-auto"
-              data-src="holder.js/500x500/auto"
-              alt="500x500"
-              src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_172249c16c0%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_172249c16c0%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-              data-holder-rendered="true"
-              style="width: 500px; height: 500px;"
-            />
-          </div>
-        </div>
+      
 
         <hr class="featurette-divider" />
 
@@ -328,32 +285,105 @@
       crossorigin="anonymous"
     ></script> -->
 
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="500"
-      height="500"
-      viewBox="0 0 500 500"
-      preserveAspectRatio="none"
-      style="
-        display: none;
-        visibility: hidden;
-        position: absolute;
-        top: -100%;
-        left: -100%;
-      "
-    >
-      <defs><style type="text/css"></style></defs>
-      <text
-        x="0"
-        y="25"
-        style="
-          font-weight: bold;
-          font-size: 25pt;
-          font-family: Arial, Helvetica, Open Sans, sans-serif;
-        "
-      >
-        500x500
-      </text>
-    </svg>
+    <div class="whiteouts" style="margin-bottom: 0px;"> <!-- polarity/subjectivity -->
+      <div class="wrapper">
+          Select keyword:&nbsp;
+          <button class="btn1 active1" id="allkw" onclick="step('All keywords')">All keywords</button>
+          <button class="btn1 " id="codei" onclick="step('Codeine/Tylenol #3')">Codeine/Tylenol #3</button>
+          <button class="btn1" id="demer" onclick="step('Demerol/Meperidine');">Demerol/Meperidine</button>
+          <button class="btn1" id="heroi" onclick="step('Heroin');">Heroin</button>
+          <button class="btn1" id="hydro" onclick="step('Hydromorphone/Dilaudid');">Hydromorphone/Dilaudid</button>
+          <button class="btn1" id="fenta" onclick="step('Fentanyl/Duragesic');">Fentanyl/Duragesic</button>
+          <button class="btn1" id="vicod" onclick="step('Vicodin/Norco/Hydrocodone');">Vicodin/Norco/Hydrocodone</button>
+          <button class="btn1" id="metha" onclick="step('Methadone');">Methadone</button>
+          <button class="btn1" id="morph" onclick="step('Morphine');">Morphine</button>
+          <button class="btn1" id="opiat" onclick="step('Opiate(s)');">Opiate(s)</button>
+          <button class="btn1" id="opioi" onclick="step('Opioid(s)');">Opioid(s)</button>
+          <button class="btn1" id="oxycod" onclick="step('Oxycodone/Percocet');">Oxycodone/Percocet</button>
+          <button class="btn1" id="oxycon" onclick="step('Oxycontin');">Oxycontin</button>
+          <button class="btn1" id="trama" onclick="step('Tramadol/Ultram');">Tramadol/Ultram</button>
+          <!-- <button class='btn1' onclick='step("gabapentin/neurontin");'>gabapentin/neurontin</button> -->
+      </div>
+
+      <!-- <div class='w3-row'>
+          <div class='w3-col s7'> -->
+              <div id="pol" class="js-plotly-plot"><div class="plot-container plotly"><div class="svg-container" style="position: relative; width: 100%; height: 450px;"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="931" height="450" style="background: rgb(255, 255, 255);"><defs id="defs-16eeaf"><g class="clips"><clipPath id="clip16eeafxyplot" class="plotclip"><rect width="771" height="270"></rect></clipPath><clipPath class="axesclip" id="clip16eeafx"><rect x="80" y="0" width="771" height="450"></rect></clipPath><clipPath class="axesclip" id="clip16eeafy"><rect x="0" y="100" width="931" height="270"></rect></clipPath><clipPath class="axesclip" id="clip16eeafxy"><rect x="80" y="100" width="771" height="270"></rect></clipPath></g><g class="gradients"></g></defs><g class="bglayer"></g><g class="draglayer cursor-crosshair"><g class="xy"><rect class="nsewdrag drag" data-subplot="xy" x="80" y="100" width="771" height="270" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nwdrag drag cursor-nw-resize" data-subplot="xy" x="60" y="80" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nedrag drag cursor-ne-resize" data-subplot="xy" x="851" y="80" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="swdrag drag cursor-sw-resize" data-subplot="xy" x="60" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sedrag drag cursor-se-resize" data-subplot="xy" x="851" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ewdrag drag cursor-ew-resize" data-subplot="xy" x="157.10000000000002" y="374.5" width="616.8000000000001" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="wdrag drag cursor-w-resize" data-subplot="xy" x="80" y="374.5" width="77.10000000000001" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="edrag drag cursor-e-resize" data-subplot="xy" x="773.9" y="374.5" width="77.10000000000001" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nsdrag drag cursor-ns-resize" data-subplot="xy" x="55.5" y="127" width="20" height="216" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sdrag drag cursor-s-resize" data-subplot="xy" x="55.5" y="343" width="20" height="27" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ndrag drag cursor-n-resize" data-subplot="xy" x="55.5" y="100" width="20" height="27" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect></g></g><g class="layer-below"><g class="imagelayer"></g><g class="shapelayer"></g></g><g class="cartesianlayer"><g class="subplot xy"><g class="layer-subplot"><g class="shapelayer"></g><g class="imagelayer"></g></g><g class="gridlayer"><g class="x"></g><g class="y"><path class="ygrid crisp" transform="translate(0,330.58000000000004)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,291.15999999999997)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,251.74)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,212.32)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,172.9)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,133.48)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path></g></g><g class="zerolinelayer"><path class="yzl zl crisp" transform="translate(0,370)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path></g><path class="xlines-below"></path><path class="ylines-below"></path><g class="overlines-below"></g><g class="xaxislayer-below"></g><g class="yaxislayer-below"></g><g class="overaxes-below"></g><g class="plot" transform="translate(80, 100)" clip-path="url('#clip16eeafxyplot')"><g class="barlayer mlayer"><g class="trace bars" style="opacity: 1;"><g class="points"><g class="point"><path d="M21.1,270V13.5H100.64V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(222, 59, 68); fill-opacity: 1;"></path></g><g class="point"><path d="M102.26,270V27.47H181.79V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(230, 110, 96); fill-opacity: 1;"></path></g><g class="point"><path d="M183.42,270V36.14H262.95V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(238, 157, 122); fill-opacity: 1;"></path></g><g class="point"><path d="M264.57,270V150.2H344.11V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(246, 208, 150); fill-opacity: 1;"></path></g><g class="point"><path d="M345.73,270V56.47H425.27V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(254, 255, 175); fill-opacity: 1;"></path></g><g class="point"><path d="M426.89,270V176.82H506.43V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(210, 226, 179); fill-opacity: 1;"></path></g><g class="point"><path d="M508.05,270V140.01H587.58V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(169, 199, 182); fill-opacity: 1;"></path></g><g class="point"><path d="M589.21,270V171.06H668.74V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(128, 172, 185); fill-opacity: 1;"></path></g><g class="point"><path d="M670.36,270V211.59H749.9V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(83, 142, 189); fill-opacity: 1;"></path></g></g></g></g></g><g class="overplot"></g><path class="xlines-above crisp" d="M0,0" style="fill: none;"></path><path class="ylines-above crisp" d="M0,0" style="fill: none;"></path><g class="overlines-above"></g><g class="xaxislayer-above"><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-1.0" data-math="N" transform="translate(100.28999999999999,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-1.0</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-0.75" data-math="N" transform="translate(181.45,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-0.75</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-0.50" data-math="N" transform="translate(262.61,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-0.50</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-0.25" data-math="N" transform="translate(343.76,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-0.25</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.0" data-math="N" transform="translate(465.5,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.0</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.25" data-math="N" transform="translate(587.24,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.25</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.50" data-math="N" transform="translate(668.39,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.50</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.75" data-math="N" transform="translate(749.55,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.75</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="1.0" data-math="N" transform="translate(830.71,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">1.0</text></g></g><g class="yaxislayer-above"><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="0" data-math="N" transform="translate(0,370)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="50,000" data-math="N" transform="translate(0,330.58000000000004)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">50,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="100,000" data-math="N" transform="translate(0,291.15999999999997)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">100,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="150,000" data-math="N" transform="translate(0,251.74)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">150,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="200,000" data-math="N" transform="translate(0,212.32)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">200,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="250,000" data-math="N" transform="translate(0,172.9)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">250,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="300,000" data-math="N" transform="translate(0,133.48)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">300,000</text></g></g><g class="overaxes-above"></g></g></g><g class="polarlayer"></g><g class="ternarylayer"></g><g class="geolayer"></g><g class="funnelarealayer"></g><g class="pielayer"></g><g class="treemaplayer"></g><g class="sunburstlayer"></g><g class="glimages"></g></svg><div class="gl-container"></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="931" height="450"><defs id="topdefs-16eeaf"><g class="clips"></g></defs><g class="indicatorlayer"></g><g class="layer-above"><g class="imagelayer"></g><g class="shapelayer"></g></g><g class="infolayer"><g class="g-gtitle"><text class="gtitle" x="18.62" y="50" text-anchor="start" dy="0em" data-unformatted="<b>Number of Tweets by Polarity: All keywords, 2019</b>" data-math="N" style="font-family: &quot;Roboto Condensed&quot;; font-size: 24px; fill: rgb(51, 51, 51); opacity: 1; font-weight: normal; white-space: pre;"><tspan style="font-weight:bold">Number of Tweets by Polarity: All keywords, 2019</tspan></text></g><g class="g-xtitle"><text class="xtitle" x="465.5" y="428" text-anchor="middle" data-unformatted="Polarity" data-math="N" style="font-family: &quot;Roboto Condensed&quot;; font-size: 16px; fill: rgb(51, 51, 51); opacity: 1; font-weight: normal; white-space: pre;">Polarity</text></g><g class="g-ytitle"></g></g><g class="menulayer"></g><g class="zoomlayer"></g></svg><div class="modebar-container" style="position: absolute; top: 0px; right: 0px; width: 100%;"><div id="modebar-16eeaf" class="modebar modebar--hover ease-bg"><div class="modebar-group"><a rel="tooltip" class="modebar-btn" data-title="Download plot as a png" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="m500 450c-83 0-150-67-150-150 0-83 67-150 150-150 83 0 150 67 150 150 0 83-67 150-150 150z m400 150h-120c-16 0-34 13-39 29l-31 93c-6 15-23 28-40 28h-340c-16 0-34-13-39-28l-31-94c-6-15-23-28-40-28h-120c-55 0-100-45-100-100v-450c0-55 45-100 100-100h800c55 0 100 45 100 100v450c0 55-45 100-100 100z m-400-550c-138 0-250 112-250 250 0 138 112 250 250 250 138 0 250-112 250-250 0-138-112-250-250-250z m365 380c-19 0-35 16-35 35 0 19 16 35 35 35 19 0 35-16 35-35 0-19-16-35-35-35z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a></div><div class="modebar-group"></div><div class="modebar-group"></div><div class="modebar-group"></div></div></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="931" height="450"><g class="hoverlayer"></g></svg></div></div></div>
+          <!-- </div>
+          <div class='w3-col s5'>
+              <div id='sub'></div>
+          </div>
+      </div> -->
+
+      <div class="slidecontainer">
+          <div id="steps" style="float:center; margin-bottom:5px;">
+              <button class="step" onclick="stepDown()">◀</button>
+              <button class="step" onclick="stepUp()">►</button>
+          </div>
+          <input type="range" min="1" max="13" value="13" class="slider" id="myRange">
+          <div class="sliderticks">
+              <p>2007</p>
+              <p>2008</p>
+              <p>2009</p>
+              <p>2010</p>
+              <p>2011</p>
+              <p>2012</p>
+              <p>2013</p>
+              <p>2014</p>
+              <p>2015</p>
+              <p>2016</p>
+              <p>2017</p>
+              <p>2018</p>
+              <p>2019</p>
+          </div>
+      </div>
+  </div>
+
+  <script>
+    if (typeof document.getElementsByClassName!='function') {
+    document.getElementsByClassName = function() {
+        var elms = document.getElementsByTagName('*');
+        var ei = new Array();
+        for (i=0;i<elms.length;i++) {
+        if (elms[i].getAttribute('class')) {
+            ecl = elms[i].getAttribute('class').split(' ');
+            for (j=0;j<ecl.length;j++) {
+            if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                ei.push(elms[i]);
+            }
+            }
+        } else if (elms[i].className) {
+            ecl = elms[i].className.split(' ');
+            for (j=0;j<ecl.length;j++) {
+            if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                ei.push(elms[i]);
+            }
+            }
+        }
+        }
+        return ei;
+    }
+    }
+
+    function addEvent(obj, type, fn) {
+        if (obj.addEventListener) {
+            obj.addEventListener(type, fn, false);
+        }
+        else if (obj.attachEvent) {
+            obj["e"+type+fn] = fn;
+            obj[type+fn] = function() {obj["e"+type+fn](window.event);}
+            obj.attachEvent("on"+type, obj[type+fn]);
+        }
+        else {
+            obj["on"+type] = obj["e"+type+fn];
+        }
+    }
+</script>
+
+<script src="../javascript/vader.js"></script>
+
+
+
+    
+
   </body>
 </html>
