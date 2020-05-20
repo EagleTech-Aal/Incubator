@@ -108,6 +108,13 @@ h1 a {
   padding: 10px;
 }
 
+.graph-margins {
+  padding-right: 5em;
+  padding-left: 5em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
 .center-two {
   position: relative;
   margin-top: 6%;

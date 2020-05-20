@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'> 
+</head>
+
+<body>
+    <div id='tweetsxtime'></div>
+    <script>
+        Plotly.d3.csv('tweetsxtime.csv', function(err, rows){
+            function unpack(rows, key) {
+                return rows.map(function(row) { return row[key]; });
+            }
+
+            var years = unpack(rows, 'year'),
+            Codei = unpack(rows, 'Codeine/Tylenol #3'),
+            Demer = unpack(rows, 'Demerol/Meperidine'),
+            Hydro = unpack(rows, 'Hydromorphone/Dilaudid'),
+            Fenta = unpack(rows, 'Fentanyl/Duragesic'),
+            Vicod = unpack(rows, 'Vicodin/Norco/Hydrocodone'),
+            Metha = unpack(rows, 'Methadone'),
+            Morph = unpack(rows, 'Morphine'),
+            Opiat = unpack(rows, 'Opiate(s)'),
+            Opioi = unpack(rows, 'Opioid(s)'),
+            Oxyco = unpack(rows, 'Oxycodone/Percocet'),
+            Oxyco = unpack(rows, 'Oxycontin'),
+            Trama = unpack(rows, 'Tramadol/Ultram'),
+            Heroi = unpack(rows, 'Heroin');
+
+            var data = [{
+                x: years,
+                y: Codei,
+                type: 'line',
+                marker: { color: '#a6cee3' },
+                name: 'Codeine/Tylenol #3'
+            }, {
+                x: years,
+                y: Demer,
+                type: 'line',
+                marker: { color: '#1f78b4' },
+                name: 'Demerol/Meperidine'
+            }, {
+                x: years,
+                y: Fenta,
+                type: 'line',
+                marker: { color: '#33a02c' },
+                name: 'Fentanyl/Duragesic'
+            }, {
+                x: years,
+                y: Heroi,
+                type: 'line',
+                marker: { color: '#8ab1ff' },
+                name: 'Heroin'
+            }, {
+                x: years,
+                y: Hydro,
+                type: 'line',
+                marker: { color: '#b2df8a' },
+                name: 'Hydromorphone/Dilaudid'
+            }, {
+                x: years,
+                y: Metha,
+                type: 'line',
+                marker: { color: '#e31a1c' },
+                name: 'Methadone'
+            }, {
+                x: years,
+                y: Morph,
+                type: 'line',
+                marker: { color: '#fdbf6f' },
+                name: 'Morphine'
+            }, {
+                x: years,
+                y: Opiat,
+                type: 'line',
+                marker: { color: '#ff7f00' },
+                name: 'Opiate(s)'
+            }, {
+                x: years,
+                y: Opioi,
+                type: 'line',
+                marker: { color: '#cab2d6' },
+                name: 'Opioid(s)'
+            }, {
+                x: years,
+                y: Oxyco,
+                type: 'line',
+                marker: { color: '#6a3d9a' },
+                name: 'Oxycodone/Percocet'
+            }, {
+                x: years,
+                y: Oxyco,
+                type: 'line',
+                marker: { color: '#ffff99' },
+                name: 'Oxycontin'
+            }, {
+                x: years,
+                y: Trama,
+                type: 'line',
+                marker: { color: '#b15928' },
+                name: 'Tramadol/Ultram'
+            }, {
+                x: years,
+                y: Vicod,
+                type: 'line',
+                marker: { color: '#fb9a99' },
+                name: 'Vicodin/Norco/Hydrocodone'
+            }];
+
+            var layout = {
+                title: {
+                    text: '<b>Tweets by Keyword Over Time</b>',
+                    font: {
+                        size: 26
+                    },
+                    x: 0.02
+                },
+                bargap: 0.02,
+                xaxis: {
+                    showline: false,
+                    zeroline: false,
+                    title: 'Year',
+                    titlefont: {
+                        size: 16
+                    },
+                    tickfont: {
+                        size: 14
+                    },
+                    // type: 'year',
+                    dtick: 2
+                },
+                yaxis: {
+                    showline: false,
+                    zeroline: true,
+                    // zerolinecolor: '#eeeeee',
+                    zerolinewidth: 1,
+                    title: 'Tweets',
+                    tickformat: ",.0f",
+                    titlefont: {
+                        size: 16
+                    },
+                    tickfont: {
+                        size: 14
+                    },
+                    automargin: true,
+                    // type: 'log'
+                },
+                margin: {
+                    pad: 6,
+                    l: 100,
+                    r: 100
+                },
+                font: {
+                    family: "'Roboto Condensed'",
+                    color: 'rgb(51, 51, 51)'
+                }
+            };
+
+            Plotly.newPlot('tweetsxtime', data, layout, {modeBarButtonsToRemove: ['sendDataToCloud', 'toggleSpikelines', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], responsive: true, displaylogo: false});
+        });
+    </script>
+</body>
+
+</html>

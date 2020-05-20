@@ -6,17 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Analysis</title>
 
+    
+    <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
+
+
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script> 
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto Condensed"
+      rel="stylesheet"
+    />
+    
+
+    <script src="../javascript/analysis/vader.js"></script>
 
     <link rel="stylesheet" href="../styles/analysis/dom.css" />
     <link rel="stylesheet" href="../styles/loading.css" />
@@ -28,6 +44,10 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="../javascript/analysis/script.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="../javascript/analysis/javascript.js"></script>
+    <script src="../javascript/analysis/script.js"></script>
+    <script src="../javascript/analysis/vader.js"></script>
 
     <script>
       window.addEventListener("load", function () {
@@ -100,7 +120,7 @@
     </nav>
 
     <!-- Boooootstrap -->
-    <div style="text-align: center; margin-top: 4em;"><span class="top-name" >Top Drugs Used</span></div>
+    <div style="text-align: center; margin-top: 4em;"><span class="top-name" >Top Drugs Tweeted</span></div>
     <main role="main" style="margin-top: 5em;">
       <!-- Marketing messaging and featurettes
       ================================================== -->
@@ -161,10 +181,14 @@
           <!-- /.col-lg-4 -->
         </div>
         <!-- /.row -->
+        <hr class="featurette-divider" />
+
+        
+    
 
         <!-- START THE FEATURETTES -->
 
-        <hr class="featurette-divider" />
+        
 
         <div class="row featurette">
           <div class="col-md-5">
@@ -279,107 +303,718 @@
       </div>
       <!-- /.container -->
     </main>
+
+    <div class="graph-margins">
+      <div id='tweetsxtime'></div>
+      <script>
+          Plotly.d3.csv('../data-set/tweetsxtime.csv', function(err, rows){
+              function unpack(rows, key) {
+                  return rows.map(function(row) { return row[key]; });
+              }
+  
+              var years = unpack(rows, 'year'),
+              Codei = unpack(rows, 'Codeine/Tylenol #3'),
+              Demer = unpack(rows, 'Demerol/Meperidine'),
+              Hydro = unpack(rows, 'Hydromorphone/Dilaudid'),
+              Fenta = unpack(rows, 'Fentanyl/Duragesic'),
+              Vicod = unpack(rows, 'Vicodin/Norco/Hydrocodone'),
+              Metha = unpack(rows, 'Methadone'),
+              Morph = unpack(rows, 'Morphine'),
+              Opiat = unpack(rows, 'Opiate(s)'),
+              Opioi = unpack(rows, 'Opioid(s)'),
+              Oxyco = unpack(rows, 'Oxycodone/Percocet'),
+              Oxyco = unpack(rows, 'Oxycontin'),
+              Trama = unpack(rows, 'Tramadol/Ultram'),
+              Heroi = unpack(rows, 'Heroin');
+  
+              var data = [{
+                  x: years,
+                  y: Codei,
+                  type: 'line',
+                  marker: { color: '#a6cee3' },
+                  name: 'Codeine/Tylenol #3'
+              }, {
+                  x: years,
+                  y: Demer,
+                  type: 'line',
+                  marker: { color: '#1f78b4' },
+                  name: 'Demerol/Meperidine'
+              }, {
+                  x: years,
+                  y: Fenta,
+                  type: 'line',
+                  marker: { color: '#33a02c' },
+                  name: 'Fentanyl/Duragesic'
+              }, {
+                  x: years,
+                  y: Heroi,
+                  type: 'line',
+                  marker: { color: '#8ab1ff' },
+                  name: 'Heroin'
+              }, {
+                  x: years,
+                  y: Hydro,
+                  type: 'line',
+                  marker: { color: '#b2df8a' },
+                  name: 'Hydromorphone/Dilaudid'
+              }, {
+                  x: years,
+                  y: Metha,
+                  type: 'line',
+                  marker: { color: '#e31a1c' },
+                  name: 'Methadone'
+              }, {
+                  x: years,
+                  y: Morph,
+                  type: 'line',
+                  marker: { color: '#fdbf6f' },
+                  name: 'Morphine'
+              }, {
+                  x: years,
+                  y: Opiat,
+                  type: 'line',
+                  marker: { color: '#ff7f00' },
+                  name: 'Opiate(s)'
+              }, {
+                  x: years,
+                  y: Opioi,
+                  type: 'line',
+                  marker: { color: '#cab2d6' },
+                  name: 'Opioid(s)'
+              }, {
+                  x: years,
+                  y: Oxyco,
+                  type: 'line',
+                  marker: { color: '#6a3d9a' },
+                  name: 'Oxycodone/Percocet'
+              }, {
+                  x: years,
+                  y: Oxyco,
+                  type: 'line',
+                  marker: { color: '#ffff99' },
+                  name: 'Oxycontin'
+              }, {
+                  x: years,
+                  y: Trama,
+                  type: 'line',
+                  marker: { color: '#b15928' },
+                  name: 'Tramadol/Ultram'
+              }, {
+                  x: years,
+                  y: Vicod,
+                  type: 'line',
+                  marker: { color: '#fb9a99' },
+                  name: 'Vicodin/Norco/Hydrocodone'
+              }];
+  
+              var layout = {
+                  title: {
+                      text: '<b>Tweets by Keyword Over Time</b>',
+                      font: {
+                          size: 26
+                      },
+                      x: 0.02
+                  },
+                  bargap: 0.02,
+                  xaxis: {
+                      showline: false,
+                      zeroline: false,
+                      title: 'Year',
+                      titlefont: {
+                          size: 16
+                      },
+                      tickfont: {
+                          size: 14
+                      },
+                      // type: 'year',
+                      dtick: 2
+                  },
+                  yaxis: {
+                      showline: false,
+                      zeroline: true,
+                      // zerolinecolor: '#eeeeee',
+                      zerolinewidth: 1,
+                      title: 'Tweets',
+                      tickformat: ",.0f",
+                      titlefont: {
+                          size: 16
+                      },
+                      tickfont: {
+                          size: 14
+                      },
+                      automargin: true,
+                      // type: 'log'
+                  },
+                  margin: {
+                      pad: 6,
+                      l: 100,
+                      r: 100
+                  },
+                  font: {
+                      family: "'Roboto Condensed'",
+                      color: 'rgb(51, 51, 51)'
+                  }
+              };
+  
+              Plotly.newPlot('tweetsxtime', data, layout, {modeBarButtonsToRemove: ['sendDataToCloud', 'toggleSpikelines', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], responsive: true, displaylogo: false});
+          });
+      </script>
+    </div>
+    
+
+    <div class="graph-margins">
+      <div id='timeline'></div>
+    <script>
+        Plotly.d3.csv('../data-set/timeline.csv', function(err, rows){
+            function unpack(rows, key) {
+                return rows.map(function(row) { return row[key]; });
+            }
+
+            var dates = unpack(rows, 'date'),
+            count = unpack(rows, 'count'),
+            headlines = unpack(rows, 'headline');
+
+            var data = [{
+                x: dates,
+                y: count,
+                mode: 'lines+markers',
+                type: 'scatter',
+                // r: 'markers',
+                // text: headlines,
+                text: headlines,
+                hovertemplate: '%{text}<extra>%{y}</extra>',
+                marker: {
+                color: 'rgb(62,85,130)'
+                },
+                line: {
+                    color: 'rgb(138,177,255)'
+                //     dash: 'dot'
+                }
+                // name: 'TEDS-Heroin'
+            }];
+
+            var layout = {
+                title: {
+                    text: '<b>Most Tweeted Links</b>',
+                    font: {
+                        size: 28
+                    },
+                    x: 0.02
+                },
+                annotations: [
+                    {
+                        x: '2018-07-24',
+                        y: 19422,
+                        xref: 'x',
+                        yref: 'y',
+                        text: '"Demi Lovato Hospitalized After Drug Overdose"<br><i>iHeartRadio</i>',
+                        showarrow: true,
+                        arrowhead: 0,
+                        arrowwidth: 1,
+                        arrowcolor: 'rgb(62,85,130)',
+                        // arrowsize: 2,
+                        ax: 160,
+                        ay: 60,
+                        font: {
+                            size: 14
+                        }
+                    },
+                    {
+                        x: '2017-10-10',
+                        y: 10242,
+                        xref: 'x', 
+                        yref: 'y',
+                        text: '"Vikings at Bears: Five Game-Changing Plays"<br><i>Daily Norseman</i>',
+                        showarrow: true,
+                        arrowhead: 0,
+                        arrowwidth: 1,
+                        arrowcolor: 'rgb(62,85,130)',
+                        // arrowsize: 2,
+                        ax: -40,
+                        ay: -80,
+                        font: {
+                            size: 14
+                        }
+                    }
+                ],
+                xaxis: {
+                    showline: false,
+                    zeroline: false,
+                    // title: 'Year',
+                    titlefont: {
+                        size: 16
+                    },
+                    tickfont: {
+                        size: 14
+                    }
+                },
+                yaxis: {
+                    showline: false,
+                    zeroline: false,
+                    zerolinecolor: '#eeeeee',
+                    zerolinewidth: 1,
+                    // title: 'Number of TEDS Admissions, Tweets',
+                    tickformat: ",.0f",
+                    titlefont: {
+                        size: 16
+                    },
+                    tickfont: {
+                        size: 14
+                    },
+                    automargin: true
+                },
+                margin: {
+                    pad: 4
+                },
+                font: {
+                    family: 'Roboto Condensed',
+                    color: 'rgb(51, 51, 51)'
+                }
+            };
+
+            Plotly.newPlot('timeline', data, layout, {modeBarButtonsToRemove: ['sendDataToCloud', 'toggleSpikelines', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], responsive: true, displaylogo: false});
+        });
+    </script>
+    </div>
+
+  <hr class="featurette-divider" />
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Analysis</h1>
+        <p class="lead">In order to compare tweets with TEDS admissions, tweets were assigned to opioid use categories analogous to the three codes representing opioid use in TEDS. Tweets mentioning heroin and methadone were assigned to individual categories, while tweets mentioning the remaining keywords were assigned to the “other opiates and synthetics” category. Summary datasets were created for both the Twitter data and TEDS data and then merged by opioid use category and year. The number of monthly active U.S. Twitter users (available beginning in 2010) was added to the dataset using supplementary data published by Twitter . We then created adjusted variables (tweets per 100,000 users and admissions per 100,000 total admissions) to better scale the variables and account for the exponential increase in Twitter activity over the last decade. 
+         <br><br> We assessed the relationship between tweets mentioning opioids and opioid overdose deaths using mortality data gathered from the National Vital Statistics System (NVSS) . Tweets per 100,000 users were compared to drug overdose death rates by opioid use category. For the purposes of this analysis, the opioid category analogous to “other opiates and synthetics” as reported by TEDS was “natural and semisynthetic opioids”, which includes such drugs as morphine, codeine, hydrocodone, and oxycodone. 
+          </p>
+      </div>
+    </div>
+
+
+    <div class="data-table" > 
+      <h2></h2>
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Variable</th>
+          <th scope="col">Correlation Coefficient</th>
+          <th scope="col">p-value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>TEDS Heroin Admissions</td>
+          <td>-0.76</td>
+          <td>0.03</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>TEDS Methadone Admissions</td>
+          <td>0.78</td>
+          <td>0.02</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>TEDS Other Opiates  and Synthetics Admissions</td>
+          <td>0.83</td>
+          <td>0.01</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>Heroin Overdose Deaths</td>
+          <td>-0.83</td>
+          <td>0.01</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>Methadone Overdose Deaths</td>
+          <td>0.95</td>
+          <td> &#60;0.1 </td>
+        </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>Natural and Semisynthetic Opioid Overdose Deaths</td>
+          <td>-0.55</td>
+          <td>0.16</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4"></h1>
+      <p class="lead">Correlation coefficients were used to measure the strength of the relationship between tweets and TEDS admissions. The methadone (r=0.78, p=0.02) and other opiate (r=0.83, p=0.01) categories showed significant positive relationships while we found a significant negative relationship for heroin (r=-0.76, p=0.03). The same method was used to measure the relationship between tweets and opioid overdose deaths.  We found a strong positive relationship between tweets mentioning methadone and methadone overdose deaths (r=0.95, p&#60;0.01) but observed weaker negative relationships for both heroin overdose deaths (-0.83, p=0.01) and natural and semisynthetic opioid overdose deaths (-0.55, p=0.16). 
+
+        </p>
+    </div>
+  </div>
+
+
+
     <!-- <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"
     ></script> -->
 
-    <div class="whiteouts" style="margin-bottom: 0px;"> <!-- polarity/subjectivity -->
-      <div class="wrapper">
-          Select keyword:&nbsp;
-          <button class="btn1 active1" id="allkw" onclick="step('All keywords')">All keywords</button>
-          <button class="btn1 " id="codei" onclick="step('Codeine/Tylenol #3')">Codeine/Tylenol #3</button>
-          <button class="btn1" id="demer" onclick="step('Demerol/Meperidine');">Demerol/Meperidine</button>
-          <button class="btn1" id="heroi" onclick="step('Heroin');">Heroin</button>
-          <button class="btn1" id="hydro" onclick="step('Hydromorphone/Dilaudid');">Hydromorphone/Dilaudid</button>
-          <button class="btn1" id="fenta" onclick="step('Fentanyl/Duragesic');">Fentanyl/Duragesic</button>
-          <button class="btn1" id="vicod" onclick="step('Vicodin/Norco/Hydrocodone');">Vicodin/Norco/Hydrocodone</button>
-          <button class="btn1" id="metha" onclick="step('Methadone');">Methadone</button>
-          <button class="btn1" id="morph" onclick="step('Morphine');">Morphine</button>
-          <button class="btn1" id="opiat" onclick="step('Opiate(s)');">Opiate(s)</button>
-          <button class="btn1" id="opioi" onclick="step('Opioid(s)');">Opioid(s)</button>
-          <button class="btn1" id="oxycod" onclick="step('Oxycodone/Percocet');">Oxycodone/Percocet</button>
-          <button class="btn1" id="oxycon" onclick="step('Oxycontin');">Oxycontin</button>
-          <button class="btn1" id="trama" onclick="step('Tramadol/Ultram');">Tramadol/Ultram</button>
-          <!-- <button class='btn1' onclick='step("gabapentin/neurontin");'>gabapentin/neurontin</button> -->
+    
+    <div class="wrappers graph-margins" >
+      Select keyword:&nbsp;
+      <button class='btn1 active1' id='allkw' onclick='step("All keywords")'>All keywords</button>
+      <button class='btn1 ' id='codei' onclick='step("Codeine/Tylenol #3")'>Codeine/Tylenol #3</button>
+      <button class='btn1' id='demer' onclick='step("Demerol/Meperidine");'>Demerol/Meperidine</button>
+      <button class='btn1' id='heroi' onclick='step("Heroin");'>Heroin</button>
+      <button class='btn1' id='hydro' onclick='step("Hydromorphone/Dilaudid");'>Hydromorphone/Dilaudid</button>
+      <button class='btn1' id='fenta' onclick='step("Fentanyl/Duragesic");'>Fentanyl/Duragesic</button>
+      <button class='btn1' id='vicod' onclick='step("Vicodin/Norco/Hydrocodone");'>Vicodin/Norco/Hydrocodone</button>
+      <button class='btn1' id='metha' onclick='step("Methadone");'>Methadone</button>
+      <button class='btn1' id='morph' onclick='step("Morphine");'>Morphine</button>
+      <button class='btn1' id='opiat' onclick='step("Opiate(s)");'>Opiate(s)</button>
+      <button class='btn1' id='opioi' onclick='step("Opioid(s)");'>Opioid(s)</button>
+      <button class='btn1' id='oxycod' onclick='step("Oxycodone/Percocet");'>Oxycodone/Percocet</button>
+      <button class='btn1' id='oxycon' onclick='step("Oxycontin");'>Oxycontin</button>
+      <button class='btn1' id='trama' onclick='step("Tramadol/Ultram");'>Tramadol/Ultram</button>
+  </div>
+  <div id='pol'></div>
+  <div class="slidecontainer">
+      <div id='steps' style='float:center; margin-bottom:5px;'>
+          <button class='step' onclick='stepDown()'>&#9664;</button>
+          <button class='step' onclick='stepUp()'>&#9658;</button>
       </div>
-
-      <!-- <div class='w3-row'>
-          <div class='w3-col s7'> -->
-              <div id="pol" class="js-plotly-plot"><div class="plot-container plotly"><div class="svg-container" style="position: relative; width: 100%; height: 450px;"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="931" height="450" style="background: rgb(255, 255, 255);"><defs id="defs-16eeaf"><g class="clips"><clipPath id="clip16eeafxyplot" class="plotclip"><rect width="771" height="270"></rect></clipPath><clipPath class="axesclip" id="clip16eeafx"><rect x="80" y="0" width="771" height="450"></rect></clipPath><clipPath class="axesclip" id="clip16eeafy"><rect x="0" y="100" width="931" height="270"></rect></clipPath><clipPath class="axesclip" id="clip16eeafxy"><rect x="80" y="100" width="771" height="270"></rect></clipPath></g><g class="gradients"></g></defs><g class="bglayer"></g><g class="draglayer cursor-crosshair"><g class="xy"><rect class="nsewdrag drag" data-subplot="xy" x="80" y="100" width="771" height="270" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nwdrag drag cursor-nw-resize" data-subplot="xy" x="60" y="80" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nedrag drag cursor-ne-resize" data-subplot="xy" x="851" y="80" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="swdrag drag cursor-sw-resize" data-subplot="xy" x="60" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sedrag drag cursor-se-resize" data-subplot="xy" x="851" y="370" width="20" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ewdrag drag cursor-ew-resize" data-subplot="xy" x="157.10000000000002" y="374.5" width="616.8000000000001" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="wdrag drag cursor-w-resize" data-subplot="xy" x="80" y="374.5" width="77.10000000000001" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="edrag drag cursor-e-resize" data-subplot="xy" x="773.9" y="374.5" width="77.10000000000001" height="20" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="nsdrag drag cursor-ns-resize" data-subplot="xy" x="55.5" y="127" width="20" height="216" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="sdrag drag cursor-s-resize" data-subplot="xy" x="55.5" y="343" width="20" height="27" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect><rect class="ndrag drag cursor-n-resize" data-subplot="xy" x="55.5" y="100" width="20" height="27" style="fill: transparent; stroke-width: 0; pointer-events: all;"></rect></g></g><g class="layer-below"><g class="imagelayer"></g><g class="shapelayer"></g></g><g class="cartesianlayer"><g class="subplot xy"><g class="layer-subplot"><g class="shapelayer"></g><g class="imagelayer"></g></g><g class="gridlayer"><g class="x"></g><g class="y"><path class="ygrid crisp" transform="translate(0,330.58000000000004)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,291.15999999999997)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,251.74)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,212.32)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,172.9)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path><path class="ygrid crisp" transform="translate(0,133.48)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path></g></g><g class="zerolinelayer"><path class="yzl zl crisp" transform="translate(0,370)" d="M80,0h771" style="stroke: rgb(238, 238, 238); stroke-opacity: 1; stroke-width: 1px;"></path></g><path class="xlines-below"></path><path class="ylines-below"></path><g class="overlines-below"></g><g class="xaxislayer-below"></g><g class="yaxislayer-below"></g><g class="overaxes-below"></g><g class="plot" transform="translate(80, 100)" clip-path="url('#clip16eeafxyplot')"><g class="barlayer mlayer"><g class="trace bars" style="opacity: 1;"><g class="points"><g class="point"><path d="M21.1,270V13.5H100.64V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(222, 59, 68); fill-opacity: 1;"></path></g><g class="point"><path d="M102.26,270V27.47H181.79V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(230, 110, 96); fill-opacity: 1;"></path></g><g class="point"><path d="M183.42,270V36.14H262.95V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(238, 157, 122); fill-opacity: 1;"></path></g><g class="point"><path d="M264.57,270V150.2H344.11V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(246, 208, 150); fill-opacity: 1;"></path></g><g class="point"><path d="M345.73,270V56.47H425.27V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(254, 255, 175); fill-opacity: 1;"></path></g><g class="point"><path d="M426.89,270V176.82H506.43V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(210, 226, 179); fill-opacity: 1;"></path></g><g class="point"><path d="M508.05,270V140.01H587.58V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(169, 199, 182); fill-opacity: 1;"></path></g><g class="point"><path d="M589.21,270V171.06H668.74V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(128, 172, 185); fill-opacity: 1;"></path></g><g class="point"><path d="M670.36,270V211.59H749.9V270Z" style="vector-effect: non-scaling-stroke; opacity: 1; stroke-width: 0px; fill: rgb(83, 142, 189); fill-opacity: 1;"></path></g></g></g></g></g><g class="overplot"></g><path class="xlines-above crisp" d="M0,0" style="fill: none;"></path><path class="ylines-above crisp" d="M0,0" style="fill: none;"></path><g class="overlines-above"></g><g class="xaxislayer-above"><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-1.0" data-math="N" transform="translate(100.28999999999999,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-1.0</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-0.75" data-math="N" transform="translate(181.45,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-0.75</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-0.50" data-math="N" transform="translate(262.61,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-0.50</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="-0.25" data-math="N" transform="translate(343.76,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">-0.25</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.0" data-math="N" transform="translate(465.5,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.0</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.25" data-math="N" transform="translate(587.24,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.25</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.50" data-math="N" transform="translate(668.39,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.50</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="0.75" data-math="N" transform="translate(749.55,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0.75</text></g><g class="xtick"><text text-anchor="middle" x="0" y="389" data-unformatted="1.0" data-math="N" transform="translate(830.71,0)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">1.0</text></g></g><g class="yaxislayer-above"><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="0" data-math="N" transform="translate(0,370)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">0</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="50,000" data-math="N" transform="translate(0,330.58000000000004)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">50,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="100,000" data-math="N" transform="translate(0,291.15999999999997)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">100,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="150,000" data-math="N" transform="translate(0,251.74)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">150,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="200,000" data-math="N" transform="translate(0,212.32)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">200,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="250,000" data-math="N" transform="translate(0,172.9)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">250,000</text></g><g class="ytick"><text text-anchor="end" x="75" y="4.8999999999999995" data-unformatted="300,000" data-math="N" transform="translate(0,133.48)" style="font-family: &quot;Roboto Condensed&quot;; font-size: 14px; fill: rgb(51, 51, 51); fill-opacity: 1; white-space: pre;">300,000</text></g></g><g class="overaxes-above"></g></g></g><g class="polarlayer"></g><g class="ternarylayer"></g><g class="geolayer"></g><g class="funnelarealayer"></g><g class="pielayer"></g><g class="treemaplayer"></g><g class="sunburstlayer"></g><g class="glimages"></g></svg><div class="gl-container"></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="931" height="450"><defs id="topdefs-16eeaf"><g class="clips"></g></defs><g class="indicatorlayer"></g><g class="layer-above"><g class="imagelayer"></g><g class="shapelayer"></g></g><g class="infolayer"><g class="g-gtitle"><text class="gtitle" x="18.62" y="50" text-anchor="start" dy="0em" data-unformatted="<b>Number of Tweets by Polarity: All keywords, 2019</b>" data-math="N" style="font-family: &quot;Roboto Condensed&quot;; font-size: 24px; fill: rgb(51, 51, 51); opacity: 1; font-weight: normal; white-space: pre;"><tspan style="font-weight:bold">Number of Tweets by Polarity: All keywords, 2019</tspan></text></g><g class="g-xtitle"><text class="xtitle" x="465.5" y="428" text-anchor="middle" data-unformatted="Polarity" data-math="N" style="font-family: &quot;Roboto Condensed&quot;; font-size: 16px; fill: rgb(51, 51, 51); opacity: 1; font-weight: normal; white-space: pre;">Polarity</text></g><g class="g-ytitle"></g></g><g class="menulayer"></g><g class="zoomlayer"></g></svg><div class="modebar-container" style="position: absolute; top: 0px; right: 0px; width: 100%;"><div id="modebar-16eeaf" class="modebar modebar--hover ease-bg"><div class="modebar-group"><a rel="tooltip" class="modebar-btn" data-title="Download plot as a png" data-toggle="false" data-gravity="n"><svg viewBox="0 0 1000 1000" class="icon" height="1em" width="1em"><path d="m500 450c-83 0-150-67-150-150 0-83 67-150 150-150 83 0 150 67 150 150 0 83-67 150-150 150z m400 150h-120c-16 0-34 13-39 29l-31 93c-6 15-23 28-40 28h-340c-16 0-34-13-39-28l-31-94c-6-15-23-28-40-28h-120c-55 0-100-45-100-100v-450c0-55 45-100 100-100h800c55 0 100 45 100 100v450c0 55-45 100-100 100z m-400-550c-138 0-250 112-250 250 0 138 112 250 250 250 138 0 250-112 250-250 0-138-112-250-250-250z m365 380c-19 0-35 16-35 35 0 19 16 35 35 35 19 0 35-16 35-35 0-19-16-35-35-35z" transform="matrix(1 0 0 -1 0 850)"></path></svg></a></div><div class="modebar-group"></div><div class="modebar-group"></div><div class="modebar-group"></div></div></div><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="931" height="450"><g class="hoverlayer"></g></svg></div></div></div>
-          <!-- </div>
-          <div class='w3-col s5'>
-              <div id='sub'></div>
-          </div>
-      </div> -->
-
-      <div class="slidecontainer">
-          <div id="steps" style="float:center; margin-bottom:5px;">
-              <button class="step" onclick="stepDown()">◀</button>
-              <button class="step" onclick="stepUp()">►</button>
-          </div>
-          <input type="range" min="1" max="13" value="13" class="slider" id="myRange">
-          <div class="sliderticks">
-              <p>2007</p>
-              <p>2008</p>
-              <p>2009</p>
-              <p>2010</p>
-              <p>2011</p>
-              <p>2012</p>
-              <p>2013</p>
-              <p>2014</p>
-              <p>2015</p>
-              <p>2016</p>
-              <p>2017</p>
-              <p>2018</p>
-              <p>2019</p>
-          </div>
+      <input type="range" min="1" max="13" value="13" class="slider" id="myRange">
+      <div class='sliderticks'>
+          <p>2007</p>
+          <p>2008</p>
+          <p>2009</p>
+          <p>2010</p>
+          <p>2011</p>
+          <p>2012</p>
+          <p>2013</p>
+          <p>2014</p>
+          <p>2015</p>
+          <p>2016</p>
+          <p>2017</p>
+          <p>2018</p>
+          <p>2019</p>
       </div>
   </div>
 
+  <style>
+      #morph.active1, #morph.active2, #morph:hover, .morph{
+          background-color: #fdbf6f;
+          color: white;
+      }
+
+      #demer.active1, #demer.active2, #demer:hover, .demer {
+          background-color: #1f78b4;
+          color: white;
+      }
+
+      #vicod.active1, #vicod.active2, #vicod:hover, .vicod {
+          background-color: #fb9a99;
+          color: white;
+      }
+
+      #codei.active1, #codei.active2, #codei:hover, .codei {
+          background-color: #a6cee3;
+          color: white;
+      }
+
+      #oxycon.active1, #oxycon.active2, #oxycon:hover, .oxycon {
+          background-color: #ffff99;
+          /* color: white; */
+      }
+
+      #metha.active1, #metha.active2, #metha:hover, .metha {
+          background-color: #e31a1c;
+          color: white;
+      }
+
+      #trama.active1, #trama.active2, #trama:hover, .trama {
+          background-color: #b15928;
+          color: white;
+      }
+
+      #heroi.active1, #heroi.active2, #heroi:hover, .heroi {
+          background-color: #8ab1ff;
+          color: white;
+      }
+
+      #hydro.active1, #hydro.active2, #hydro:hover, .hydro {
+          background-color: #b2df8a;
+          color: white;
+      }
+
+      #oxycod.active1, #oxycod.active2, #oxycod:hover, .oxycod {
+          background-color: #6a3d9a;
+          color: white;
+      }
+
+      #opiat.active1, #opiat.active2, #opiat:hover, .opiat {
+          background-color: #ff7f00;
+          color: white;
+      }
+
+      #fenta.active1, #fenta.active2, #fenta:hover, .fenta {
+          background-color: #33a02c;
+          color: white;
+      }
+
+      #opioi.active1, #opioi.active2, #opioi:hover, .opioi {
+          background-color: #cab2d6;
+          color: white;
+      }
+
+      #allkw.active1, #allkw.active2, #allkw:hover, .allkw {
+          background-color: #666;
+          color: white;
+      }
+
+      .btn1 {
+          border: none;
+          padding: 2px 8px;
+          margin: 0px 2px 4px 2px;
+          background-color: #f1f1f1;
+          cursor: pointer;
+          /* width: 45%; */
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 13px;
+          border-radius: 10px;
+          font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      .wrapper {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      .slidecontainer {
+          margin-left: 10%;
+          width: 80%;
+          padding: 15px;
+      }
+
+      .slider {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 15px;
+          border-radius: 5px;
+          background: #d3d3d3;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+          position: relative;
+          z-index: 1;
+      }
+
+      .slider:hover {
+          opacity: 1;
+      }
+
+      .slider::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #538ebd;
+          cursor: pointer;
+      }
+
+      .slider::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: #538ebd;
+          cursor: pointer;
+      }
+
+      .sliderticks {
+          display: flex;
+          justify-content: space-between;
+          padding: 0 12px;
+          font-family: 'Roboto Condensed', sans-serif;
+      }
+
+      .sliderticks p {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          width: 1px;
+          background: #D3D3D3;
+          height: 10px;
+          line-height: 40px;
+          margin: 0 0 10px 0;
+          padding-top: 0px;
+          font-size: 12px;
+      }
+
+      .step {
+          border-radius: 50%;
+          border: none;
+          background-color: white;
+          color: #538ebd;
+      }
+  </style>
+
   <script>
-    if (typeof document.getElementsByClassName!='function') {
-    document.getElementsByClassName = function() {
-        var elms = document.getElementsByTagName('*');
-        var ei = new Array();
-        for (i=0;i<elms.length;i++) {
-        if (elms[i].getAttribute('class')) {
-            ecl = elms[i].getAttribute('class').split(' ');
-            for (j=0;j<ecl.length;j++) {
-            if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
-                ei.push(elms[i]);
-            }
-            }
-        } else if (elms[i].className) {
-            ecl = elms[i].className.split(' ');
-            for (j=0;j<ecl.length;j++) {
-            if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
-                ei.push(elms[i]);
-            }
-            }
-        }
-        }
-        return ei;
-    }
-    }
+      var btns = document.getElementsByClassName("btn1");
+      for (var i = 0; i < btns.length; i++) {
+          addEvent(btns[i], "click", function() {
+          var current = document.getElementsByClassName("active1");
+          if (current.length > 0) { 
+              current[0].className = current[0].className.replace(" active1", "");
+          }
+          this.className += " active1";
+          });
+      }
 
-    function addEvent(obj, type, fn) {
-        if (obj.addEventListener) {
-            obj.addEventListener(type, fn, false);
-        }
-        else if (obj.attachEvent) {
-            obj["e"+type+fn] = fn;
-            obj[type+fn] = function() {obj["e"+type+fn](window.event);}
-            obj.attachEvent("on"+type, obj[type+fn]);
-        }
-        else {
-            obj["on"+type] = obj["e"+type+fn];
-        }
-    }
-</script>
+      var slider = document.getElementById("myRange");
 
-<script src="../javascript/vader.js"></script>
+      format = d3.format(',');
+
+      slider.oninput = function() {
+          step();
+      }
+
+      step('All keywords');
+
+      function step(drug) {
+          year = 2006 + parseInt(slider.value);
+          if (drug == undefined) {
+              drug = $('.active1').text();
+          }
+          Plotly.d3.csv('../data-set/polarity.csv', function(err, rows){
+              function unpack(rows, key) {
+                  return rows.map(function(row) { return row[key]; });
+              }
+
+              var num = unpack(rows, year+'-'+drug);
+              var pol = ['[-1.0, -0.75)', '[-0.75, -0.50)', '[-0.50, -0.25)', '[-0.25, 0.0)', '0.0 ', '(0.0, 0.25]', '(0.25, 0.50]', '(0.50, 0.75]', '(0.75, 1.0]'];
+              var hover = [];
+              for (var i = 0;  i < pol.length; i++) {
+                  hover[i] = 'Number of Tweets: <b>' + format(num[i]) + '</b><br>Polarity: <b>' + pol[i] + '</b>'
+              }
+
+              var data = [{
+                  x: pol,
+                  y: num,
+                  type: 'bar',
+                  marker: {
+                  color: ['#de3b44', '#e66e60', '#ee9d7a', '#f6d096', '#feffaf', '#d2e2b3', '#a9c7b6', '#80acb9', '#538ebd']
+                  },
+                  hovertext: hover,
+                  hoverinfo: 'text'
+              }];
+
+              var layout = {
+                  title: {
+                      text: '<b>Number of Tweets by Polarity: ' + drug + ', ' + year + '</b>',
+                      font: {
+                          size: 24
+                      },
+                      x: 0.02
+                  },
+                  bargap: 0.02,
+                  xaxis: {
+                      range: [-0.75, 8.75],
+                      tickmode: 'array',
+                      tickvals: [-0.5, 0.5, 1.5, 2.5, 4, 5.5, 6.5, 7.5, 8.5],
+                      ticktext: ['-1.0', '-0.75', '-0.50', '-0.25', '0.0', '0.25', '0.50', '0.75', '1.0'],
+                      showline: false,
+                      zeroline: false,
+                      title: 'Polarity',
+                      titlefont: {
+                          size: 16
+                      },
+                      tickfont: {
+                          size: 14
+                      },
+                      type: 'category',
+                  },
+                  yaxis: {
+                      showline: false,
+                      zeroline: true,
+                      zerolinecolor: '#eeeeee',
+                      zerolinewidth: 1,
+                      // title: 'Number of Tweets',
+                      tickformat: ",.0f",
+                      titlefont: {
+                          size: 16
+                      },
+                      tickfont: {
+                          size: 14
+                      }
+                  },
+                  margin: {
+                      pad: 4
+                  },
+                  font: {
+                      family: 'Roboto Condensed',
+                      color: 'rgb(51, 51, 51)'
+                  }
+              };
+
+              Plotly.newPlot('pol', data, layout, {modeBarButtonsToRemove: ['sendDataToCloud', 'toggleSpikelines', 'zoom2d', 'pan2d', 'select2d', 'lasso2d', 'zoomIn2d', 'zoomOut2d', 'autoScale2d', 'resetScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'], responsive: true, displaylogo: false});
+          });
+      }
+
+      function stepUp() {
+          slider.stepUp(1);
+          step();
+      }
+
+      function stepDown() {
+          slider.stepDown(1);
+          step();
+      }
+
+      if (typeof document.getElementsByClassName!='function') {
+      document.getElementsByClassName = function() {
+          var elms = document.getElementsByTagName('*');
+          var ei = new Array();
+          for (i=0;i<elms.length;i++) {
+          if (elms[i].getAttribute('class')) {
+              ecl = elms[i].getAttribute('class').split(' ');
+              for (j=0;j<ecl.length;j++) {
+              if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                  ei.push(elms[i]);
+              }
+              }
+          } else if (elms[i].className) {
+              ecl = elms[i].className.split(' ');
+              for (j=0;j<ecl.length;j++) {
+              if (ecl[j].toLowerCase() == arguments[0].toLowerCase()) {
+                  ei.push(elms[i]);
+              }
+              }
+          }
+          }
+          return ei;
+      }
+      }
+  
+      function addEvent(obj, type, fn) {
+          if (obj.addEventListener) {
+              obj.addEventListener(type, fn, false);
+          }
+          else if (obj.attachEvent) {
+              obj["e"+type+fn] = fn;
+              obj[type+fn] = function() {obj["e"+type+fn](window.event);}
+              obj.attachEvent("on"+type, obj[type+fn]);
+          }
+          else {
+              obj["on"+type] = obj["e"+type+fn];
+          }
+      }
+  </script>
 
 
 
