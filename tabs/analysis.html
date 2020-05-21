@@ -714,6 +714,17 @@
       crossorigin="anonymous"
     ></script> -->
 
+    <div class="row featurette" style="margin-left: 5em;">
+      <div class="col-md-5 order-md-2">
+        <h2 class="featurette-heading">
+          Number of Tweets by Polarity:
+        </h2>
+        <p class="lead">
+          A line chart of Tweets by keyword category over time.
+        </p>
+      </div>
+    </div>
+
     <div class="wrappers graph-margins">
       Select keyword:&nbsp;
       <button class="btn1 active1" id="allkw" onclick='step("All keywords")'>
@@ -1079,12 +1090,7 @@
 
           var layout = {
             title: {
-              text:
-                "<b>Number of Tweets by Polarity: " +
-                drug +
-                ", " +
-                year +
-                "</b>",
+              text: "" + drug + " " + year + "</b>",
               font: {
                 size: 24,
               },
@@ -1210,5 +1216,7 @@
         }
       }
     </script>
+
+    <div style="margin-bottom: 10em;"></div>
   </body>
 </html>
