@@ -27,12 +27,6 @@
 
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto Condensed"
-      rel="stylesheet"
-    />
-
-    <script src="../javascript/analysis/vader.js"></script>
 
     <link rel="stylesheet" href="../styles/analysis/dom.css" />
     <link rel="stylesheet" href="../styles/loading.css" />
@@ -45,12 +39,7 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="../javascript/analysis/script.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-
-    <script src="../javascript/analysis/javascript.js"></script>
-    <script src="../javascript/analysis/script.js"></script>
-    <script src="../javascript/analysis/vader.js"></script>
 
     <script>
       window.addEventListener("load", function () {
@@ -156,11 +145,6 @@
               height="100"
             />
             <h2>#2 Opioids</h2>
-            <!-- <p>
-              <a class="btn btn-secondary" href="#" role="button"
-                >View details »</a
-              >
-            </p> -->
           </div>
           <!-- /.col-lg-4 -->
           <div class="col-lg-4">
@@ -184,8 +168,8 @@
 
         <!-- START THE FEATURETTES -->
 
-        <div class="row featurette">
-          <div class="col-md-5">
+        <div class="row featurette" style="margin-top: 5em;">
+          <div class="col-md-7">
             <h2 class="featurette-heading">
               Total Tweets by Keyword
               <span class="text-muted">, 2007-2019:</span>
@@ -208,43 +192,43 @@
               <div class="flourish-embed" data-src="visualisation/931612" style="padding: 5em;">
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
               </div> -->
-
-              <div class="w3-col s6">
-                <div class="flourish-embed" data-src="visualisation/956529">
-                  <div
-                    style="
-                      min-width: 500px !important;
-                      width: 100% !important;
-                      margin: 0 0 4px !important;
-                      text-align: right !important;
-                      font-family: Helvetica, sans-serif !important;
-                      color: #888 !important;
-                      font-size: 11px !important;
-                      font-weight: bold !important;
-                      font-style: normal !important;
-                      -webkit-font-smoothing: antialiased !important;
-                      box-shadow: none !important;
-                    "
-                  >
-                    <a
-                      href="https://public.flourish.studio/visualisation/956529/?utm_source=showcase&amp;utm_campaign=visualisation/956529"
-                      target="_top"
-                      style="
-                        display: inline-block !important;
-                        text-decoration: none !important;
-                        font: inherit !important;
-                        color: inherit !important;
-                        border: none !important;
-                        margin: 0 5px !important;
-                        box-shadow: none !important;
-                      "
-                    ></a>
-                  </div>
-                </div>
-                <script src="https://public.flourish.studio/resources/embed.js"></script>
-              </div>
             </div>
           </div>
+        </div>
+
+        <div class="w3-col s6">
+          <div class="flourish-embed" data-src="visualisation/956529">
+            <div
+              style="
+                min-width: 500px !important;
+                width: 100% !important;
+                margin: 0 0 4px !important;
+                text-align: right !important;
+                font-family: Helvetica, sans-serif !important;
+                color: #888 !important;
+                font-size: 11px !important;
+                font-weight: bold !important;
+                font-style: normal !important;
+                -webkit-font-smoothing: antialiased !important;
+                box-shadow: none !important;
+              "
+            >
+              <a
+                href="https://public.flourish.studio/visualisation/956529/?utm_source=showcase&amp;utm_campaign=visualisation/956529"
+                target="_top"
+                style="
+                  display: inline-block !important;
+                  text-decoration: none !important;
+                  font: inherit !important;
+                  color: inherit !important;
+                  border: none !important;
+                  margin: 0 5px !important;
+                  box-shadow: none !important;
+                "
+              ></a>
+            </div>
+          </div>
+          <script src="https://public.flourish.studio/resources/embed.js"></script>
         </div>
 
         <hr class="featurette-divider" />
@@ -256,6 +240,11 @@
             </h2>
             <p class="lead">
               A line chart of Tweets by keyword category over time.
+              <i
+                ><br />
+                Double-click on legend item to isolate plot. Single-click on
+                legend item to add or delete plot</i
+              >
             </p>
           </div>
         </div>
@@ -267,10 +256,14 @@
         <div class="row featurette">
           <div class="order-md-2">
             <h2 class="featurette-heading">
-              Tweets by Keyword Over Time:
+              Most Tweeted Links
             </h2>
             <p class="lead">
-              A line chart of Tweets by keyword category over time.
+              A line chart of most tweeted links related to the opioid epidemic.
+              <i
+                ><br />
+                Hover over plot to view data.</i
+              >
             </p>
           </div>
         </div>
@@ -1090,7 +1083,7 @@
 
           var layout = {
             title: {
-              text: "" + drug + " " + year + "</b>",
+              text: "<b>" + drug + ", " + year + "</b>",
               font: {
                 size: 24,
               },
