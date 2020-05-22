@@ -46,6 +46,7 @@
         $("body").fadeIn(100);
       });
     </script>
+
   </head>
 
   <body>
@@ -118,7 +119,7 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
       <div class="container marketing">
         <!-- Three columns of text below the carousel -->
-        <div class="row">
+        <div class="row row-space" style="width: 75%; margin: 0 auto;">
           <div class="col-lg-4">
             <img
               src="../images/heroin.png"
@@ -126,7 +127,7 @@
               width="140"
               height="100"
             />
-            <h2>#1 Heroin</h2>
+            <h2><img src="../images/one.png" alt=""> Heroin</h2>
             <!-- <p>
               <a class="btn btn-secondary" href="#" role="button"
                 >View details »</a
@@ -141,7 +142,7 @@
               width="160"
               height="100"
             />
-            <h2>#2 Opioids</h2>
+            <h2><img src="../images/two.png" alt=""> Opioids</h2>
           </div>
           <!-- /.col-lg-4 -->
           <div class="col-lg-4">
@@ -151,7 +152,7 @@
               width="120"
               height="100"
             />
-            <h2>#3 Hydrocodone</h2>
+            <h2><img src="../images/three.png" alt=""> Hydrocodone</h2>
             <!-- <p>
               <a class="btn btn-secondary" href="#" role="button"
                 >View details »</a
@@ -229,12 +230,7 @@
               src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22500%22%20height%3D%22500%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20500%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_172249c16bd%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A25pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_172249c16bd%22%3E%3Crect%20width%3D%22500%22%20height%3D%22500%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22185.1171875%22%20y%3D%22261.1%22%3E500x500%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
               data-holder-rendered="true"
             /> -->
-            <div class="chart-one">
-              <!-- <span style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Bar Chart</span>
-              <div class="flourish-embed" data-src="visualisation/931612" style="padding: 5em;">
-                <script src="https://public.flourish.studio/resources/embed.js"></script>
-              </div> -->
-            </div>
+
           </div>
         </div>
 
@@ -504,7 +500,6 @@
         });
       </script>
 
-      <div class="graph-margins"></div>
       <script>
         Plotly.d3.csv("../data-set/timeline.csv", function (err, rows) {
           function unpack(rows, key) {
@@ -759,7 +754,7 @@
       </div>
     </div>
 
-    <div class="wrappers">
+    <div class="wrappers" style="width: 95%; margin: 0 auto; margin-top: 4em;">
       Select keyword:&nbsp;
       <button class="btn1 active1" id="allkw" onclick='step("All keywords")'>
         All keywords
@@ -806,7 +801,7 @@
         Tramadol/Ultram
       </button>
     </div>
-    <div id="pol"></div>
+    <div id="pol" style="width: 80%; margin: 0 auto;"></div>
     <div class="slidecontainer">
       <div id="steps" style="float: center; margin-bottom: 5px;">
         <button class="step" onclick="stepDown()">&#9664;</button>
