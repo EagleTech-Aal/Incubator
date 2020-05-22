@@ -12,6 +12,10 @@ h2 {
   font-weight: bold;
 }
 
+.lead p {
+  margin-top: 5em !important;
+}
+
 #left {
   height: 93vh;
   /* background-color: palegoldenrod;  */
@@ -54,8 +58,12 @@ a {
 .data-table {
   margin-top: 10em;
   margin-bottom: 10em;
-  padding-left: 6em;
-  padding-right: 6em;
+  /* padding-left: 6em;
+  padding-right: 6em; */
+}
+
+.lead p {
+  padding-top: 3em;
 }
 
 .whiteouts {

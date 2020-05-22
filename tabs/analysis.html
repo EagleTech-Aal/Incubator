@@ -25,9 +25,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-
     <link rel="stylesheet" href="../styles/analysis/dom.css" />
     <link rel="stylesheet" href="../styles/loading.css" />
     <link rel="stylesheet" href="../styles/loadScreen.css" />
@@ -166,13 +163,58 @@
         <!-- /.row -->
         <hr class="featurette-divider" />
 
+        <!-- START DESCRIPTION -->
+
+        <div class="row featurette feat-space" style="margin-top: 5em;">
+          <div class="col-md-10 order-md-2">
+            <h2 class="featurette-heading">
+              Opioid abuse and opioid overdose deaths are a serious public
+              health burden in the United States
+            </h2>
+            <p class="lead">
+             <ul>
+               <li>
+                 650,212 admissions to substance use treatment for opiates in 2018 (TEDS)
+              </li>
+              <li>
+                46,802 opioid overdose deaths in 2018 (NCHS)
+              </li>
+             </ul>
+            </p>
+            <p class="lead" style="margin-top: 3em;">
+              The opioid epidemic has occurred in parallel with the rise of social media. 
+              Our objective is to examine the relationships between data related to the opioid epidemic and the volume and polarity of Tweets published on Twitter.
+              In order to accomplish this, we compared Tweets mentioning opioids with: 
+              <ul>
+                <li>
+                  <i>
+                    TEDS admissions for opioid use
+                  </i>
+                </li>
+                <li>
+                  <i>
+                    Opioid overdose deaths reported by the National Center for Health Statistics
+                  </i>
+                </li>
+              </ul>
+            </p>
+
+            <p class="lead" style="margin-top: 3em; margin-bottom: 5em;">
+              Our end goal is to provide a meaningful contribution to the discussion around the opioid epidemic and the role of social media in public health
+            </p>
+          </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
         <!-- START THE FEATURETTES -->
 
         <div class="row featurette" style="margin-top: 5em;">
           <div class="col-md-7">
             <h2 class="featurette-heading">
-              Total Tweets by Keyword
-              <span class="text-muted">, 2007-2019:</span>
+              Total Tweets by Keyword<span class="text-muted"
+                >, 2007-2019:</span
+              >
             </h2>
             <p class="lead">
               A bar chart race of total, cumulative Tweets by keyword category.
@@ -256,7 +298,7 @@
         <div class="row featurette">
           <div class="order-md-2">
             <h2 class="featurette-heading">
-              Most Tweeted Links
+              Most Tweeted Links:
             </h2>
             <p class="lead">
               A line chart of most tweeted links related to the opioid epidemic.
@@ -630,8 +672,7 @@
       </div>
     </div>
 
-    <div class="data-table">
-      <h2></h2>
+    <div class="data-table" style="width: 90%; margin: 0 auto;">
       <table class="table table-striped">
         <thead>
           <tr>
@@ -718,7 +759,7 @@
       </div>
     </div>
 
-    <div class="wrappers graph-margins">
+    <div class="wrappers">
       Select keyword:&nbsp;
       <button class="btn1 active1" id="allkw" onclick='step("All keywords")'>
         All keywords
@@ -924,7 +965,7 @@
         font-family: "Roboto Condensed", sans-serif;
       }
 
-      .wrapper {
+      .wrappers {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -1209,7 +1250,6 @@
         }
       }
     </script>
-
     <div style="margin-bottom: 10em;"></div>
   </body>
 </html>
